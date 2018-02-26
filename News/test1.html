@@ -14,6 +14,12 @@ let me try that again<br>
         <br>
     </body>
     <script>
-        //window.postMessage('Hello','https://lyl4c.github.io');
+        window.addEventListener('DOMContentLoaded', function(e) {
+            var iFrame = document.querySelectorAll('.newsPage:nth-of-type(1)');
+            console.log(iFrame);
+            //for( var i = 0; i < iFrame.length; i++) {
+                //iFrame.height = iFrame.contentWindow.document.body.scrollHeight;
+            //}
+        });
     </script>
 </html>
