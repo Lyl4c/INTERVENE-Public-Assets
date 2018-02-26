@@ -270,7 +270,6 @@
             //script made by Lylac_SYS
             //https://web.archive.org/web/20090619195506/http://www.mspaintadventures.com:80/?s=6&p=002154
             var offSite = 'https://lyl4c.github.io/INTERVENE-Public-Assets/'
-            //var localSrc = 'E:/Users/Lylac/Desktop/Stuff/Art Stuff/INTERVENE/Mirror/MSPA_6-15-09/'
             function newDiv(x) {return document.createElement(x);}
             function getByClass(x,y=0) {return document.querySelectorAll(x)[y];}
             function setDivAtt(x) {
@@ -301,7 +300,7 @@
             
             //insert mspa banner above #slide
             insertDiv('#main #container',0,setDivAtt({'div':'a','href':'http://www.mspaintadventures.com'}));
-            insertDiv('#container a',0,setDivAtt({'div':'img','height':'initial','width':'initial','src':offSite+'Mirror/MSPA-6-15-09/mspa-logo.gif'}));
+            insertDiv('#container a',0,setDivAtt({'div':'img','height':'initial','width':'initial','src':offSite+'Mirror/MSPA-6-15-09/images/mspa-logo.gif'}));
             
             //move comment box to #slide
             cloneDiv('#container #info',3,'#container #slide',5);
@@ -309,7 +308,7 @@
             
             //replace comment spoiler button with image button
             removeDiv('#commentbox div div',1);
-            insertDiv('#commentbox div div',1,setDivAtt({'div':'input','type':'image','src':offSite+'Mirror/MSPA-6-15-09/comment.gif','value':''}));
+            insertDiv('#commentbox div div',1,setDivAtt({'div':'input','type':'image','src':offSite+'Mirror/MSPA-6-15-09/images/comment.gif','value':''}));
             insertDiv('#slide #foot',0,setDivAtt({'div':'br'}));
             
             //move footer umcontainer above #info
@@ -333,7 +332,7 @@
             
             //news setup
             insertDiv('#info #infobox',1,setDivAtt({'div':'div','id':'news'}));
-            insertDiv('#infobox #news',0,setDivAtt({'div':'img','height':'initial','width':'initial','src':offSite+'Mirror/MSPA-6-15-09/newsimg.gif'}));
+            insertDiv('#infobox #news',0,setDivAtt({'div':'img','height':'initial','width':'initial','src':offSite+'Mirror/MSPA-6-15-09/images/newsimg.gif'}));
             
             //grabs text files from https://github.com/Lyl4c/INTERVENE-Public-Assets/tree/master/Mirror/News
             for (var i=1;i<=5;i++) {
@@ -353,7 +352,7 @@
             });
             
             //fake copyright image. its here to mimic the real copyright image used in ye olde mspaintadventures times
-            insertDiv('#main footer',0,setDivAtt({'div':'img','src':offSite+'Mirror/MSPA-6-15-09/notcopyright.gif'}));
+            insertDiv('#main footer',0,setDivAtt({'div':'img','src':offSite+'Mirror/MSPA-6-15-09/images/notcopyright.gif'}));
         </script>
     </body>
 </html>
