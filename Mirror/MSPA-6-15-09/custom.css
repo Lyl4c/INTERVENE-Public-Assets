@@ -1,0 +1,209 @@
+/* MSPA 6-15-09 ~ Theme created by Lylac_SYS */
+
+/* ###################### */
+/* INTERVENE specific css */
+/* ###################### */
+
+.eye_portal {
+  width: 40px;
+}
+.eye_portal img {
+  margin: auto;
+  position: absolute;
+  width: inherit;
+  background-image: url(https://raw.githubusercontent.com/Lyl4c/INTERVENE-Public-Assets/master/Mirror/MSPA-6-15-09/eye-portal-2.gif);
+  background-size: 40px;
+}
+
+/* #### */
+/* Body */
+/* #### */
+
+body {
+  background-color: #dddddd;
+  /* font-family: Verdana, Arial, Helvetica, sans-serif !important; */
+  font-size: 12px;
+  color: #000000
+}
+
+#main {
+  width: 800px;
+  padding: 0px;
+  background-color: #eeeeee;
+}
+
+/* ################### */
+/* ads and mspfa logos */
+/* ################### */
+
+.umcontainer {
+  display: flex;
+}
+
+header .mspfalogo {
+  background-image: url('https://raw.githubusercontent.com/Lyl4c/INTERVENE-Public-Assets/master/Mirror/MSPA-6-15-09/sc-mspfa-head.gif');
+}
+
+.mspfalogo {
+  width: 153px;
+  background-position: -25px center;
+}
+
+iframe.um {
+  background-color: #abcdef;
+  display: block;
+/*   transform: scaleX(0.884);
+  position: relative;
+  right: 43px; */
+}
+
+/* ####### */
+/* nav bar */
+/* ####### */
+
+nav {
+  display: block;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 9px;
+  height: 11px;
+  padding: 3px 0px;
+}
+
+nav * {
+  vertical-align: unset;
+}
+
+nav .heart {
+  visibility: hidden;
+  margin: 0px;
+}
+
+nav .heart:before {
+  content: '||';
+  visibility: visible;
+  color: #bbbbbb;
+}
+
+nav .vbar {
+  color: #bbbbbb;
+}
+
+nav > a:nth-child(-n+9) {
+  color: #2dfaf8 !important;
+}
+
+nav > a:nth-child(-n+3) {
+  color: #76d8ff !important;
+}
+
+/* ############ */
+/* main content */
+/* ############ */
+
+#container > a > img {
+  margin: 5px auto;
+}
+
+#slide {
+  display: block;
+  width: 600px;
+  margin: 0px auto;
+  background-color: #ffffff;
+}
+
+#command {
+  padding: 0px;
+  padding-bottom: 14px;
+}
+
+/* ######## */
+/* comments */
+/* ######## */
+
+#commentbox .spoiler {
+  border: none;
+  padding: 0px;
+}
+
+#commentbox .spoiler > div:last-child {
+  width: 768px;
+  margin: 12px 0px 0px 0px;
+  padding: 8px 12px;
+  background-color: #ffffff;
+  position: relative;
+  right: 100px;
+  border: 4px outset grey;
+}
+
+.cellicon {
+  max-width: none !important;
+}
+
+/* ################## */
+/* footer umcontainer */
+/* ################## */
+
+#foot {
+  background-color: #eeeeee;
+  width: 600px;
+  position: relative;
+  right: 25px;
+  padding: 0px 25px;
+}
+
+#foot #links {
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0px;
+}
+
+#container .mspfalogo {
+  background-image: url('https://mspfa.com/images/footer/random.njs');
+}
+
+/* ############# */
+/* actual footer */
+/* ############# */
+
+#info {
+  display: flex;
+  width: 798px;
+  border: 1px outset grey;
+  margin: 0px;
+}
+
+#info > span {
+  padding: 4px;
+  border: 1px inset grey;
+}
+
+#latestpages {
+  width: 245px;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+#latestpages > div {
+  background-color: #dddddd;
+}
+
+#infobox {
+  width: 533px;
+}
+
+#news > img {
+  display: block;
+  margin: auto;
+}
+
+#news .newsPage {
+  display: inherit;
+  margin: 4px auto;
+  width: 533px;
+  background-color: #a9a9a9;
+}
+
+footer > img {
+  display: block;
+  margin: 4px auto;
+}
