@@ -7,11 +7,12 @@
 .eye_portal {
   width: 40px;
 }
+
 .eye_portal img {
   margin: auto;
   position: absolute;
   width: inherit;
-  background-image: url(https://raw.githubusercontent.com/Lyl4c/INTERVENE-Public-Assets/master/Mirror/MSPA-6-15-09/eye-portal-2.gif);
+  background-image: url(https://lyl4c.github.io/INTERVENE-Public-Assets/Mirror/MSPA-6-15-09/images/eye-portal-2.gif);
   background-size: 40px;
 }
 
@@ -41,7 +42,7 @@ body {
 }
 
 header .mspfalogo {
-  background-image: url('https://raw.githubusercontent.com/Lyl4c/INTERVENE-Public-Assets/master/Mirror/MSPA-6-15-09/sc-mspfa-head.gif');
+  background-image: url('https://lyl4c.github.io/INTERVENE-Public-Assets/Mirror/MSPA-6-15-09/images/sc-mspfa-head.gif');
 }
 
 .mspfalogo {
@@ -50,7 +51,7 @@ header .mspfalogo {
 }
 
 iframe.um {
-  background-color: #abcdef;
+  /*background-color: #abcdef;*/
   display: block;
 /*   transform: scaleX(0.884);
   position: relative;
