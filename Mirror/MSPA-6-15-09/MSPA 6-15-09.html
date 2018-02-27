@@ -360,10 +360,11 @@
             insertDiv('#main footer',0,setDivAtt({'div':'img','src':offSite+'Mirror/MSPA-6-15-09/images/notcopyright.gif'}));
             
             window.addEventListener('load', function(e) {
-                console.log(getByClass('.newsPage'));
-                //for( var i = 0; i < iFrame.length; i++) {
+                for(var i=0;i<iFrame.length;i++) {
+                    console.log(i);
+                    console.log(getByClass('.newsPage',i));
                     //iFrame.height = iFrame.contentWindow.document.body.scrollHeight;
-                //}
+                }
             });
         </script>
     </body>
