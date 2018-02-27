@@ -339,15 +339,15 @@
             //grabs text files from https://github.com/Lyl4c/INTERVENE-Public-Assets/tree/master/Mirror/News
             for (var i=1;i<=5;i++) {
                 //console.log(i);
-                //offSite
                 insertDiv('#infobox #news',i,setDivAtt({'div':'iframe','class':'newsPage','style':'border:none;','scrolling':'no','src':offSite+'News/test'+i+'.html'}));
+                
             }
-            
-            function postMessageHandler(e) {
+            /*
+            function postMessageHandler(event) {
                 console.log("We've got a message!");
-                console.log("* Message:", e.data);
-                console.log("* Origin:", e.origin);
-                console.log("* Source:", e.source);
+                console.log("* Message:", event.data);
+                console.log("* Origin:", event.origin);
+                console.log("* Source:", event.source);
             }
             
             if (window.addEventListener) {
@@ -355,9 +355,16 @@
             } else {
                 window.attachEvent("onmessage", postMessageHandler);
             }
-            
+            */
             //fake copyright image. its here to mimic the real copyright image used in ye olde mspaintadventures times
             insertDiv('#main footer',0,setDivAtt({'div':'img','src':offSite+'Mirror/MSPA-6-15-09/images/notcopyright.gif'}));
+            
+            window.addEventListener('load', function(e) {
+                console.log(getByClass('.newsPage'));
+                //for( var i = 0; i < iFrame.length; i++) {
+                    //iFrame.height = iFrame.contentWindow.document.body.scrollHeight;
+                //}
+            });
         </script>
     </body>
 </html>
