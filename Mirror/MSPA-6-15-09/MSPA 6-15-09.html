@@ -282,7 +282,13 @@
                 return temp;
             }
             //x = target div | y = child target | z = new Div
-            function insertDiv(x,y,z){return getByClass(x).insertBefore(z,getByClass(x).childNodes[y]);}
+            function insertDiv(x,y,z,var after=false){
+                if (after) {
+                    return getByClass(x).insertAfter(z,getByClass(x).childNodes[y]);
+                } else {
+                    return getByClass(x).insertBefore(z,getByClass(x).childNodes[y]);
+                }
+            }
             function removeDiv(x,y){return getByClass(x).removeChild(getByClass(x).childNodes[y]);}
             //x.xc = target old div.child | y.yc = new div.child
             function cloneDiv(x,xc,y,yc){return getByClass(y).insertBefore(getByClass(x).childNodes[xc].cloneNode(true),getByClass(y).childNodes[yc]);}
@@ -338,8 +344,7 @@
             
             //grabs text files from https://github.com/Lyl4c/INTERVENE-Public-Assets/tree/master/Mirror/News
             for (var i=1;i<=5;i++) {
-                //console.log(i);
-                insertDiv('#infobox #news',i,setDivAtt({'div':'iframe','class':'newsPage','style':'border:none;','scrolling':'no','height':'0','src':offSite+'News/test'+i+'.html'}));
+                insertDiv('#infobox #news',0,setDivAtt({'div':'iframe','class':'newsPage','style':'border:none;','scrolling':'no','height':'0','src':offSite+'News/test'+i+'.html'}));
                 
             }
             
