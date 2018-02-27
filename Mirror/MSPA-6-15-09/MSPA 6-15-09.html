@@ -361,10 +361,10 @@
             
             window.addEventListener('load', function(e) {
                 var iFrame = document.querySelectorAll('.newsPage');
+                iFrame.height = iFrame.contentWindow.document.body.scrollHeight;
                 for(var i=0;i<iFrame.length;i++) {
-                    console.log(i);
+                    //console.log(i);
                     console.log(getByClass('.newsPage',i));
-                    //iFrame.height = iFrame.contentWindow.document.body.scrollHeight;
                 }
             });
         </script>
