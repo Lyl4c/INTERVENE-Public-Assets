@@ -268,6 +268,7 @@
         <!-- <iframe aria-hidden="true" id="ssIFrame_google" sandbox="allow-scripts allow-same-origin" style="position: absolute; width: 1px; height: 1px; left: -9999px; display: none;" src="https://accounts.google.com/o/oauth2/iframe#origin=https%3A%2F%2Fmspfa.com&amp;rpcToken=333132674.2333325"></iframe> -->
         <script>
             //script made by Lylac_SYS
+            //https://github.com/Lyl4c/INTERVENE-Public-Assets
             //https://web.archive.org/web/20090619195506/http://www.mspaintadventures.com:80/?s=6&p=002154
             var offSite = 'https://lyl4c.github.io/INTERVENE-Public-Assets/'
             function newDiv(x) {return document.createElement(x);}
@@ -285,9 +286,9 @@
             function removeDiv(x,y){return getByClass(x).removeChild(getByClass(x).childNodes[y]);}
             //x.xc = target old div.child | y.yc = new div.child
             function cloneDiv(x,xc,y,yc){return getByClass(y).insertBefore(getByClass(x).childNodes[xc].cloneNode(true),getByClass(y).childNodes[yc]);}
-            //cannot set target div to its current div type
-            //unused function
             /*
+            //unused function
+            //sets target div type to new dive type. cannot set target div to its current div type
             function setDivType(x,y,z){
               var temp = new newDiv(z);
               var target = getByClass(x).childNodes[y].attributes;
@@ -299,7 +300,6 @@
               removeDiv(x,y+1);
             }
             */
-            
             //insert mspa banner above #slide
             insertDiv('#main #container',0,setDivAtt({'div':'a','href':'http://www.mspaintadventures.com'}));
             insertDiv('#container a',0,setDivAtt({'div':'img','height':'initial','width':'initial','src':offSite+'Mirror/MSPA-6-15-09/images/mspa-logo.gif'}));
@@ -342,31 +342,17 @@
                 insertDiv('#infobox #news',i,setDivAtt({'div':'iframe','class':'newsPage','style':'border:none;','scrolling':'no','height':'0','src':offSite+'News/test'+i+'.html'}));
                 
             }
-            /*
-            function postMessageHandler(event) {
-                console.log("We've got a message!");
-                console.log("* Message:", event.data);
-                console.log("* Origin:", event.origin);
-                console.log("* Source:", event.source);
-            }
             
-            if (window.addEventListener) {
-                window.addEventListener("message", postMessageHandler, false);
-            } else {
-                window.attachEvent("onmessage", postMessageHandler);
-            }
-            */
-            //fake copyright image. its here to mimic the real copyright image used in ye olde mspaintadventures times
-            insertDiv('#main footer',0,setDivAtt({'div':'img','src':offSite+'Mirror/MSPA-6-15-09/images/notcopyright.gif'}));
-            
+            //sets all iframes under #news to their individual content heights.
             window.addEventListener('load', function(e) {
                 var iFrame = document.querySelectorAll('.newsPage');
                 for(var i=0;i<iFrame.length;i++) {
-                    //console.log(i);
-                    console.log(getByClass('.newsPage',i));
-                    //iFrame.height = iFrame.contentWindow.document.body.scrollHeight;
+                    iFrame[i].height = iFrame[i].contentWindow.document.body.scrollHeight;
                 }
             });
+            
+            //fake copyright image. its here to mimic the real copyright image used in ye olde mspaintadventures times
+            insertDiv('#main footer',0,setDivAtt({'div':'img','src':offSite+'Mirror/MSPA-6-15-09/images/notcopyright.gif'}));
         </script>
     </body>
 </html>
