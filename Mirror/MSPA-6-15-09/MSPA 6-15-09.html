@@ -282,7 +282,7 @@
                 return temp;
             }
             //x = target div | y = child target | z = new Div
-            function insertDiv(x,y,z){return getByClass(x).insertAfter(z,getByClass(x).childNodes[y]);}
+            function insertDiv(x,y,z){return getByClass(x).insertBefore(z,getByClass(x).childNodes[y]);}
             function removeDiv(x,y){return getByClass(x).removeChild(getByClass(x).childNodes[y]);}
             //x.xc = target old div.child | y.yc = new div.child
             function cloneDiv(x,xc,y,yc){return getByClass(y).insertBefore(getByClass(x).childNodes[xc].cloneNode(true),getByClass(y).childNodes[yc]);}
