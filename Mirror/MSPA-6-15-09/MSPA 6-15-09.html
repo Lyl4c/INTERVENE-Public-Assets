@@ -287,16 +287,18 @@
             function cloneDiv(x,xc,y,yc){return getByClass(y).insertBefore(getByClass(x).childNodes[xc].cloneNode(true),getByClass(y).childNodes[yc]);}
             //cannot set target div to its current div type
             //unused function
+            /*
             function setDivType(x,y,z){
               var temp = new newDiv(z);
               var target = getByClass(x).childNodes[y].attributes;
               for (var i=0;i<=target.length-1;i++) {
                 temp.setAttribute(target[i].name,target[i].value);
               }
-              //insertDiv(x,y,temp);
-              //cloneDiv(x+' '+getByClass(x).childNodes[y+1].localName,0,x+' '+getByClass(x).firstElementChild.localName,0);
-              //removeDiv(x,y+1);
+              insertDiv(x,y,temp);
+              cloneDiv(x+' '+getByClass(x).childNodes[y+1].localName,0,x+' '+getByClass(x).firstElementChild.localName,0);
+              removeDiv(x,y+1);
             }
+            */
             
             //insert mspa banner above #slide
             insertDiv('#main #container',0,setDivAtt({'div':'a','href':'http://www.mspaintadventures.com'}));
@@ -341,13 +343,18 @@
                 insertDiv('#infobox #news',i,setDivAtt({'div':'iframe','class':'newsPage','style':'border:none;','scrolling':'no','src':offSite+'News/test'+i+'.html'}));
             }
             
-            window.addEventListener('load', function(e) {
-                var iFrame = document.querySelectorAll('.newsPage');
-                console.log(iFrame);
-                //for( var i = 0; i < iFrame.length; i++) {
-                    //iFrame.height = iFrame.contentWindow.document.body.scrollHeight;
-                //}
-            });
+            function postMessageHandler(e) {
+                console.log("We've got a message!");
+                console.log("* Message:", e.data);
+                console.log("* Origin:", e.origin);
+                console.log("* Source:", e.source);
+            }
+            
+            if (window.addEventListener) {
+                window.addEventListener("message", postMessageHandler, false);
+            } else {
+                window.attachEvent("onmessage", postMessageHandler);
+            }
             
             //fake copyright image. its here to mimic the real copyright image used in ye olde mspaintadventures times
             insertDiv('#main footer',0,setDivAtt({'div':'img','src':offSite+'Mirror/MSPA-6-15-09/images/notcopyright.gif'}));
