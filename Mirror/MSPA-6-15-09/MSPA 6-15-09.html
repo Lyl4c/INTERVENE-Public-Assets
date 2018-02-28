@@ -346,6 +346,7 @@
                 xhttp.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
                         postCount++;
+                        loadNews();
                         //console.log('Valid Response');
                     } else {
                         return postCount;
@@ -355,7 +356,7 @@
                 xhttp.send();
                 console.log(xhttp);
             }
-            console.log(loadNews);
+            loadNews();
             /*
             //grabs text files from https://lyl4c.github.io/INTERVENE-Public-Assets/News/Posts/test1.html
             for (var i=1;i<=5;i++) {
