@@ -270,6 +270,7 @@
             //script made by Lylac_SYS
             //https://github.com/Lyl4c/INTERVENE-Public-Assets
             //https://web.archive.org/web/20090619195506/http://www.mspaintadventures.com:80/?s=6&p=002154
+            var xhttp = new XMLHttpRequest();
             var offSite = 'https://lyl4c.github.io/INTERVENE-Public-Assets/'
             function newDiv(x) {return document.createElement(x);}
             function getByClass(x,y=0) {return document.querySelectorAll(x)[y];}
@@ -336,10 +337,20 @@
             insertDiv('#info #infobox',1,setDivAtt({'div':'div','id':'news'}));
             insertDiv('#infobox #news',0,setDivAtt({'div':'img','height':'initial','width':'initial','src':offSite+'Mirror/MSPA-6-15-09/images/newsimg.gif'}));
             
-            var xhttp = new XMLHttpRequest();  
-            xhttp.open("GET", "https://lyl4c.github.io/INTERVENE-Public-Assets/News/Posts/test1.html", true);
+            //fake copyright image. its here to mimic the real copyright image used in ye olde mspaintadventures times
+            insertDiv('#main footer',0,setDivAtt({'div':'img','src':offSite+'Mirror/MSPA-6-15-09/images/notcopyright.gif'}));
+            
+            var posts = offSite+'News/Posts/';
+            var postCount = 0
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    console.log('Valid Response');
+                }
+            };
+            xhttp.open('GET', posts+'test1.html', true);
             xhttp.send();
             console.log(xhttp);
+            
             /*
             //grabs text files from https://lyl4c.github.io/INTERVENE-Public-Assets/News/Posts/test1.html
             for (var i=1;i<=5;i++) {
@@ -356,8 +367,6 @@
                 }
             });
             */
-            //fake copyright image. its here to mimic the real copyright image used in ye olde mspaintadventures times
-            insertDiv('#main footer',0,setDivAtt({'div':'img','src':offSite+'Mirror/MSPA-6-15-09/images/notcopyright.gif'}));
         </script>
     </body>
 </html>
