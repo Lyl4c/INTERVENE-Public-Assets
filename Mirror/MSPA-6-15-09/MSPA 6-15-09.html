@@ -349,13 +349,13 @@
                 xhttp.onreadystatechange = function() {
                     console.log('Ready State = '+this.readyState);
                     console.log('Status      = '+this.status);
-                    console.log('Not 404?    = '+(this.readyState == 4 && this.status == 200));
+                    console.log('Not 404?    = '+(this.readyState == 1 && this.status == 200));
                     console.log('==================');
                     if (this.readyState == 1 && this.status == 200) {
                         postCount++;
-                        loadNews();
                         console.log('Valid Response');
                         console.log('==================');
+                        loadNews();
                     } else if (this.status == 404) {
                         return console.log(postCount);
                         //return postCount;
