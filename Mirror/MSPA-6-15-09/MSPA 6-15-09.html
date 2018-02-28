@@ -347,10 +347,10 @@
                 console.log(postCount);
                 console.log(posts+'test'+(postCount+1)+'.html');
                 xhttp.onreadystatechange = function() {
-                    console.log(this.readyState);
-                    console.log(this.status);
-                    console.log('Not 404? = '+(this.readyState == 4 && this.status == 200));
-                    console.log('===============');
+                    console.log('Ready State = '+this.readyState);
+                    console.log('Status      = '+this.status);
+                    console.log('Not 404?    = '+(this.readyState == 4 && this.status == 200));
+                    console.log('==================');
                     if (this.readyState == 4 && this.status == 200) {
                         postCount++;
                         loadNews();
