@@ -355,7 +355,6 @@
                         postCount++;
                         console.log('Valid Response');
                         console.log('==================');
-                        loadNews();
                     } else if (this.status == 404) {
                         return console.log(postCount);
                         //return postCount;
@@ -364,6 +363,7 @@
                 xhttp.open('GET', posts+'test'+(postCount+1)+'.html', true);
                 xhttp.send();
                 console.log(xhttp);
+                loadNews();
             }
             loadNews();
             /*
