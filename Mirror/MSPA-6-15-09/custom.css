@@ -12,7 +12,7 @@
   margin: auto;
   position: absolute;
   width: inherit;
-  background-image: url(https://lyl4c.github.io/INTERVENE-Public-Assets/Mirror/MSPA-6-15-09/images/eye-portal-2.gif);
+  background-image: url('https://lyl4c.github.io/INTERVENE-Public-Assets/Mirror/MSPA-6-15-09/images/eye-portal-2.gif');
   background-size: 40px;
 }
 
