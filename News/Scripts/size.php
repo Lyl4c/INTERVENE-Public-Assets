@@ -1,1 +1,1 @@
-<?php echo json_encode('Hello'); ?>
+<?php echo json_encode(console.log('Hello')); ?>
