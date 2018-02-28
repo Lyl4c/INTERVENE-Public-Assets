@@ -336,6 +336,12 @@
             insertDiv('#info #infobox',1,setDivAtt({'div':'div','id':'news'}));
             insertDiv('#infobox #news',0,setDivAtt({'div':'img','height':'initial','width':'initial','src':offSite+'Mirror/MSPA-6-15-09/images/newsimg.gif'}));
             
+            var xhttp = new XMLHttpRequest();  
+            xhttp.open("GET", "https://lyl4c.github.io/INTERVENE-Public-Assets/News/Posts/test5.html", true);
+            xhttp.send();
+            console.log(xhttp);
+            
+            /*
             //grabs text files from https://lyl4c.github.io/INTERVENE-Public-Assets/News/Posts/test1.html
             for (var i=1;i<=5;i++) {
                 insertDiv('#infobox #news',1,setDivAtt({'div':'iframe','class':'newsPage','style':'border:none;','scrolling':'no','height':'0','src':offSite+'News/Posts/test'+i+'.html'}));
@@ -350,7 +356,7 @@
                     }
                 }
             });
-            
+            */
             //fake copyright image. its here to mimic the real copyright image used in ye olde mspaintadventures times
             insertDiv('#main footer',0,setDivAtt({'div':'img','src':offSite+'Mirror/MSPA-6-15-09/images/notcopyright.gif'}));
         </script>
