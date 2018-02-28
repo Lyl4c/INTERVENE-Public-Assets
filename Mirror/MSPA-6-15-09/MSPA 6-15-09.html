@@ -347,8 +347,8 @@
                 console.log(postCount);
                 console.log(posts+'test'+(postCount+1)+'.html');
                 xhttp.onreadystatechange = function() {
-                    console.log('Not 404? = '+(this.readyState == 1 && this.status == 200));
-                    if (this.readyState == 1 && this.status == 200) {
+                    console.log('Not 404? = '+(this.readyState == 4 && this.status == 200));
+                    if (this.readyState == 4 && this.status == 200) {
                         postCount++;
                         loadNews();
                         //console.log('Valid Response');
