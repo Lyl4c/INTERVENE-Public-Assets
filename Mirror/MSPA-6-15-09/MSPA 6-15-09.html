@@ -365,7 +365,8 @@
                         return loadNews();
                     }
                     if (this.readyState == 4 && this.status == 404) {
-                        return postCount = postCount;
+                        console.log('final count = '+postCount);
+                        return postCount;
                     }
                 };
                 console.log(postCount);
