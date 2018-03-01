@@ -357,6 +357,7 @@
                     */
                     if (this.readyState == 4 && this.status == 200) {
                         postCount++;
+                        console.log(xhttp);
                         /*
                         console.log('Valid Response');
                         console.log('==================');
@@ -365,7 +366,6 @@
                     } else if (this.status == 404) {
                         return postCount;
                     }
-                    //console.log(xhttp);
                 };
                 xhttp.open('GET', posts+'test'+(postCount+1)+'.html', true);
                 xhttp.send();
