@@ -325,7 +325,9 @@
             
             //trim string length in #latestpages
             for (var i=0;i<document.querySelectorAll('#latestpages div > span').length;i++) {
-                getByClass('#latestpages a > span',i).innerHTML = getByClass('#latestpages a > span',i).innerHTML.slice(0,25)+'...';
+                if (getByClass('#latestpages a > span',i).innerHTML.length > 25) {
+                    getByClass('#latestpages a > span',i).innerHTML = getByClass('#latestpages a > span',i).innerHTML.slice(0,25)+'...';
+                }
             }
             
             //delete adventure info spoiler boxes, move adventure info #adventureinfo
@@ -368,13 +370,12 @@
             function getNews(postCount) {
                 //grabs text files from https://github.com/Lyl4c/INTERVENE-Public-Assets/tree/master/News/Posts
                 for (var i=(postCount-4);i<=(postCount);i++) {
-                    console.log(i);
-                    insertDiv('#infobox #news',1,setDivAtt({'div':'iframe','class':'newsPage','style':'border:none;','scrolling':'no','height':'0','src':offSite+'News/Posts/test'+i+'.html'}));
+                    insertDiv('#infobox #news',1,setDivAtt({'div':'iframe','class':'newsPost','style':'border:none;','scrolling':'no','height':'0','src':offSite+'News/Posts/test'+i+'.html'}));
                 }
                 
                 //sets all iframes under #news to their individual content heights.
                 window.addEventListener('load', function(e) {
-                    var iFrame = document.querySelectorAll('.newsPage');
+                    var iFrame = document.querySelectorAll('.newsPost');
                     for(var i=0;i<iFrame.length;i++) {
                         if (!(RegExp('Page not found').test(iFrame[i].contentDocument.title))) {
                             iFrame[i].height = iFrame[i].contentWindow.document.body.scrollHeight;
