@@ -343,7 +343,7 @@
             //News Post Crawler; Returns posts found in https://github.com/Lyl4c/INTERVENE-Public-Assets/tree/master/News/Posts/combined.html
 
             var xhttp = new XMLHttpRequest();
-            var newsPosts = "https://lyl4c.github.io/INTERVENE-Public-Assets/News/Posts/combined.html";
+            var newsPosts = "https://lyl4c.github.io/INTERVENE-Public-Assets/News/combined.html";
 
             /* var xhttp = new XMLHttpRequest();
             var offSite = 'https://lyl4c.github.io/INTERVENE-Public-Assets/'
@@ -402,8 +402,8 @@
             function resizeIframe(newsFrameID) {
                 var iframe = window.parent.document.getElementById(newsFrameID);
                 var container = document.getElementById('allNewsPosts');
-                iframe.style.height = container.offsetHeight + 'px';            
-            } 
+                iframe.style.height = container.offsetHeight + 'px';
+            }
             
             //sets all iframes under #news to their individual content heights.
             /* window.addEventListener('load', function(e) {
