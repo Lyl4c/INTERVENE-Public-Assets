@@ -1,4 +1,8 @@
-function loadNews(url,fileName,postCount=0) {
+var postCount = 0
+var url = 'https://lyl4c.github.io/INTERVENE-Public-Assets/News/Posts/'
+var fileName = '-intervene'
+console.log('import successful');
+function loadNews() {
   xhttp.open('GET', url+(postCount+1)+fileName+'.html', true);
   xhttp.onreadystatechange = function() {
     if(xhttp.readyState == XMLHttpRequest.DONE) {
@@ -23,7 +27,7 @@ function loadNews(url,fileName,postCount=0) {
 function getNews(postCount) {
   //grabs text files from var url in loadNews()
   for (var i=(postCount-4);i<=(postCount);i++) {
-    insertDiv('#infobox #news',1,setDivAtt({'div':'iframe','class':'newsPost','style':'border:none;','scrolling':'no','height':'0','src':offSite+'News/Posts/'+i+'-intervene.html'}));
+    insertDiv('#infobox #news',1,setDivAtt({'div':'iframe','class':'newsPost','style':'border:none;','scrolling':'no','height':'0','src':url+i+'-intervene.html'}));
   }
   
   //sets all iframes under #news to their individual content heights.
