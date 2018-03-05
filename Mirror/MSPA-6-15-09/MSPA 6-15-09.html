@@ -342,11 +342,12 @@
             //fake copyright image. its here to mimic the real copyright image used in ye olde mspaintadventures times
             insertDiv('#main footer',0,setDivAtt({'div':'img','src':offSite+'Mirror/MSPA-6-15-09/images/notcopyright.gif'}));
             
+            MSPFA.import('https://lyl4c.github.io/INTERVENE-Public-Assets/News/newsPosts.js',loadNews('https://lyl4c.github.io/INTERVENE-Public-Assets/News/Posts/','-intervene.html'));
+            /*
             //News Post Crawler; Returns # of posts found in https://github.com/Lyl4c/INTERVENE-Public-Assets/tree/master/News/Posts
             var posts = offSite+'News/Posts/';
             var postCount = 0
             function loadNews() {
-                console.log(posts+(postCount+1)+'-intervene.html');
                 xhttp.open('GET', (posts+(postCount+1)+'-intervene.html'), true);
                 xhttp.onreadystatechange = function() {
                     if(xhttp.readyState == XMLHttpRequest.DONE) {
@@ -384,6 +385,7 @@
                     }
                 });
             }
+            */
         </script>
     </body>
 </html>

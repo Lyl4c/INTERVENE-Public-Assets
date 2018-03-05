@@ -1,4 +1,4 @@
-function loadNews(url,postCount=0,fileName) {
+function loadNews(url,fileName,postCount=0) {
   xhttp.open('GET', url+(postCount+1)+fileName+'.html', true);
   xhttp.onreadystatechange = function() {
     if(xhttp.readyState == XMLHttpRequest.DONE) {
