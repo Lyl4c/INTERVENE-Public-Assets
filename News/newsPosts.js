@@ -2,6 +2,7 @@ var postCount = 0
 var url = 'https://lyl4c.github.io/INTERVENE-Public-Assets/News/Posts/'
 var fileName = '-intervene'
 console.log('import successful');
+
 function loadNews() {
   xhttp.open('GET', url+(postCount+1)+fileName+'.html', true);
   xhttp.onreadystatechange = function() {
