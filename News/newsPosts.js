@@ -34,7 +34,8 @@ function getNews(postCount) {
   window.addEventListener('load', function(e) {
     var iFrame = document.querySelectorAll('.newsPost');
     for(var i=0;i<iFrame.length;i++) {
-      if (!(RegExp('Page not found').test(iFrame[i].contentDocument.title))) {
+      console.log(i+' = '+(!RegExp('Page not found').test(iFrame[i].contentDocument.title)));
+      if (!RegExp('Page not found').test(iFrame[i].contentDocument.title)) {
         iFrame[i].height = iFrame[i].contentWindow.document.body.scrollHeight;
       }
     }
