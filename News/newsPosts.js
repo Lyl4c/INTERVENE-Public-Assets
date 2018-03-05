@@ -23,7 +23,7 @@ function loadNews(url,fileName,postCount=0) {
 function getNews(postCount) {
   //grabs text files from var url in loadNews()
   for (var i=(postCount-4);i<=(postCount);i++) {
-    insertDiv('#infobox #news',1,setDivAtt({'div':'iframe','class':'newsPost','style':'border:none;','scrolling':'no','height':'0','src':offSite+'News/Posts/test'+i+'.html'}));
+    insertDiv('#infobox #news',1,setDivAtt({'div':'iframe','class':'newsPost','style':'border:none;','scrolling':'no','height':'0','src':offSite+'News/Posts/'+i+'-intervene.html'}));
   }
   
   //sets all iframes under #news to their individual content heights.
