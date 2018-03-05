@@ -24,22 +24,21 @@ function loadNews() {
 
 //loadNews();
 
-function getNews(postCount) {
+function insertNews(postCount) {
   //grabs text files from var url in loadNews()
   for (var i=(postCount-4);i<=(postCount);i++) {
     insertDiv('#infobox #news',1,setDivAtt({'div':'iframe','class':'newsPost','style':'border:none;','scrolling':'no','height':'0','src':url+i+'-intervene.html'}));
   }
-  
+  fixNews();
+}
+
+function fixNews() {
   //sets all iframes under #news to their individual content heights.
-  window.addEventListener('message', function(event) {
-    console.log('retrieving news');
-    var iFrame = document.querySelectorAll('.newsPost');
-    for(var i=0;i<iFrame.length;i++) {
-      //console.log(i+' = '+(!RegExp('Page not found').test(iFrame[i].contentDocument.title)));
-      if (!RegExp('Page not found').test(iFrame[i].contentDocument.title)) {
-        iFrame[i].height = iFrame[i].contentWindow.document.body.scrollHeight;
-      }
+  var iFrame = document.querySelectorAll('.newsPost');
+  for(var i=0;i<iFrame.length;i++) {
+    //console.log(i+' = '+(!RegExp('Page not found').test(iFrame[i].contentDocument.title)));
+    if (!RegExp('Page not found').test(iFrame[i].contentDocument.title)) {
+      iFrame[i].height = iFrame[i].contentWindow.document.body.scrollHeight;
     }
-  });
-  console.log('loaded news posts');
+  }
 }
