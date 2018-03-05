@@ -31,7 +31,7 @@ function getNews(postCount) {
   }
   
   //sets all iframes under #news to their individual content heights.
-  window.addEventListener('load', function(e) {
+  //window.addEventListener('load', function(e) {
     console.log('retrieving news');
     var iFrame = document.querySelectorAll('.newsPost');
     for(var i=0;i<iFrame.length;i++) {
@@ -40,6 +40,6 @@ function getNews(postCount) {
         iFrame[i].height = iFrame[i].contentWindow.document.body.scrollHeight;
       }
     }
-  });
+  //});
   console.log('loaded news posts');
 }
