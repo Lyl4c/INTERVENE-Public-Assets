@@ -346,6 +346,7 @@
             var posts = offSite+'News/Posts/';
             var postCount = 0
             function loadNews() {
+                console.log(posts+(postCount+1)+'-intervene.html');
                 xhttp.open('GET', posts+(postCount+1)+'-intervene.html', true);
                 xhttp.onreadystatechange = function() {
                     if(xhttp.readyState == XMLHttpRequest.DONE) {
