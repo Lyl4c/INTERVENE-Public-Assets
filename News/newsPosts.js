@@ -13,7 +13,7 @@ function loadNews() {
           postCount++;
         } else if(statusType == 4) {
           console.log('Number of Posts = '+postCount);
-          getNews(postCount);
+          insertNews(postCount);
           return;
         }
       }
