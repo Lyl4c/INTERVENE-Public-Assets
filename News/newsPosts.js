@@ -39,4 +39,5 @@ function getNews(postCount) {
       }
     }
   });
+  console.log('loaded news posts');
 }
