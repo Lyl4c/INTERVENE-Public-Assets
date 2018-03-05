@@ -37,7 +37,7 @@ function fixNews() {
   //sets all iframes under #news to their individual content heights.
   var iFrame = document.querySelectorAll('.newsPost');
   for(var i=0;i<iFrame.length;i++) {
-    //console.log(i+' = '+(!RegExp('Page not found').test(iFrame[i].contentDocument.title)));
+    console.log(i+' = '+(!RegExp('Page not found').test(iFrame[i].contentDocument.title)));
     if (!RegExp('Page not found').test(iFrame[i].contentDocument.title)) {
       iFrame[i].height = iFrame[i].contentWindow.document.body.scrollHeight;
     }
