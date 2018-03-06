@@ -15,7 +15,7 @@ var Lylac = {
             return;
           }
         }
-        //Lylac.loadNews(url,fileName,postCount);
+        Lylac.loadNews(url,fileName,postCount);
       }
     }
     xhttp.send();
