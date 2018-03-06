@@ -27,20 +27,14 @@ function loadNews() {
 function getNews(postCount) {
   //grabs text files from var url in loadNews()
   for (i=(postCount-4);i<=postCount;i++) {
-    //console.log(url+i+fileName+'.html');
-    console.log('1st i = '+i);
-    //console.log('postCount = '+(postCount-i+1));
     insertDiv('#infobox #news',1,setDivAtt({'div':'iframe','class':'newsPost','style':'border:none;','scrolling':'no','height':'0','src':url+i+fileName+'.html'}));
   }
-  //i = 0;
-  console.log('between = '+i);
+  
   //sets all iframes under #news to their individual content heights.
   window.addEventListener('load', function(e) {
-    console.log('retrieving news');
+    i=0;
     var iFrame = document.querySelectorAll('.newsPost');
     for(i=0;i<iFrame.length;i++) {
-      console.log(i+' = '+(!RegExp('Page not found').test(iFrame[i].contentDocument.title)));
-      console.log(i+' = '+iFrame[i].contentWindow.document.body.scrollHeight);
       if (!RegExp('Page not found').test(iFrame[i].contentDocument.title)) {
         iFrame[i].height = iFrame[i].contentWindow.document.body.scrollHeight;
       }
