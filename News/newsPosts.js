@@ -37,8 +37,8 @@ function getNews(postCount) {
       if (!RegExp('Page not found').test(this.contentDocument.title)) {
         this.height = this.contentWindow.document.body.scrollHeight;
       }
-    iframe.src = url+(postCount-i+1)+fileName+'.html';  
     }
+    iframe.src = url+(postCount-i+1)+fileName+'.html';  
   }
   
   //sets all iframes under #news to their individual content heights.
