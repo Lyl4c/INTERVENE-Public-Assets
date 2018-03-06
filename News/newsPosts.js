@@ -26,7 +26,7 @@ function loadNews() {
 
 function getNews(postCount) {
   //grabs text files from var url in loadNews()
-  for (let i=(postCount-4);i<=postCount;i++) {
+  for (i=(postCount-4);i<=postCount;i++) {
     //console.log(url+i+fileName+'.html');
     console.log('1st i = '+i);
     //console.log('postCount = '+(postCount-i+1));
@@ -38,7 +38,7 @@ function getNews(postCount) {
   window.addEventListener('load', function(e) {
     console.log('retrieving news');
     var iFrame = document.querySelectorAll('.newsPost');
-    for(let i=0;i<iFrame.length;i++) {
+    for(i=0;i<iFrame.length;i++) {
       console.log(i+' = '+(!RegExp('Page not found').test(iFrame[i].contentDocument.title)));
       console.log(i+' = '+iFrame[i].contentWindow.document.body.scrollHeight);
       if (!RegExp('Page not found').test(iFrame[i].contentDocument.title)) {
