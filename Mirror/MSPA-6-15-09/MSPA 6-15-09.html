@@ -275,7 +275,7 @@
             function newDiv(x) {return document.createElement(x);}
             function getByClass(x,y=0) {return document.querySelectorAll(x)[y];}
             function setDivAtt(x) {
-                var temp = new newDiv(x.div);
+                let temp = new newDiv(x.div);
                 delete x.div;
                 for (let i in x) {
                     temp.setAttribute(i,x[i]);
@@ -291,9 +291,9 @@
             //unused function
             //sets target div type to new dive type. cannot set target div to its current div type
             function setDivType(x,y,z){
-              var temp = new newDiv(z);
-              var target = getByClass(x).childNodes[y].attributes;
-              for (var i=0;i<=target.length-1;i++) {
+              let temp = new newDiv(z);
+              let target = getByClass(x).childNodes[y].attributes;
+              for (let i=0;i<=target.length-1;i++) {
                 temp.setAttribute(target[i].name,target[i].value);
               }
               insertDiv(x,y,temp);

@@ -9,7 +9,6 @@ function loadNews() {
       if (xhttp.status) {
         statusType = Math.floor(xhttp.status/100);
         if(statusType == 2) {
-          console.log(xhttp);
           postCount++;
         } else if(statusType == 4) {
           console.log('Number of Posts = '+postCount);
@@ -33,7 +32,7 @@ function getNews(postCount) {
     //console.log('postCount = '+(postCount-i+1));
     insertDiv('#infobox #news',1,setDivAtt({'div':'iframe','class':'newsPost','style':'border:none;','scrolling':'no','height':'0','src':url+i+fileName+'.html'}));
   }
-  //console.log('between = '+i);
+  
   //sets all iframes under #news to their individual content heights.
   window.addEventListener('load', function(e) {
     console.log('retrieving news');
