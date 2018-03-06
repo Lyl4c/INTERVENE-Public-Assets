@@ -20,7 +20,7 @@ function loadNews(url,fileName,postCount=0) {
           postCount++;
         } else if(statusType == 4) {
           console.log('Number of Posts = '+postCount);
-          getNews(postCount);
+          getNews(url,fileName,postCount);
           return;
         }
       }
@@ -32,7 +32,7 @@ function loadNews(url,fileName,postCount=0) {
 
 //loadNews();
 
-function getNews(postCount) {
+function getNews(url,fileName,postCount) {
   for (let i=1;i<=5;i++) {
     //grabs text files from url param
     let iframe = insertDiv('#infobox #news',i,setDivAtt({'div':'iframe','class':'newsPost','style':'border:none;','scrolling':'no','height':'0'}));
