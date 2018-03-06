@@ -32,11 +32,10 @@ function getNews(postCount) {
     console.log('1st i = '+i);
     var iframe = insertDiv('#infobox #news',1,setDivAtt({'div':'iframe','class':'newsPost','style':'border:none;','scrolling':'no','height':'0'}));
     iframe.onload = function() {
-      alert('loaded');
-      console.log(i+' = '+(!RegExp('Page not found').test(iFrame[i].contentDocument.title)));
-      console.log(i+' = '+iFrame[i].contentWindow.document.body.scrollHeight);
-      if (!RegExp('Page not found').test(iFrame[i].contentDocument.title)) {
-        iFrame[i].height = iFrame[i].contentWindow.document.body.scrollHeight;
+      console.log(i+' = '+(!RegExp('Page not found').test(iFrame.contentDocument.title)));
+      console.log(i+' = '+iFrame.contentWindow.document.body.scrollHeight);
+      if (!RegExp('Page not found').test(iFrame.contentDocument.title)) {
+        iFrame.height = iFrame.contentWindow.document.body.scrollHeight;
       }
     }
     iframe.src = url+(postCount-i+1)+fileName+'.html';
