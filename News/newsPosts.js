@@ -27,11 +27,11 @@ var iFrame = document.querySelectorAll('.newsPost');
 
 function getNews(postCount) {
   //grabs text files from var url in loadNews()
-  for (let i=(postCount-4);i<=postCount;i++) {
+  for (let i=1;i<=5;i++) {
     //console.log(url+i+fileName+'.html');
     console.log('1st i = '+i);
     //console.log('postCount = '+(postCount-i+1));
-    insertDiv('#infobox #news',1,setDivAtt({'div':'iframe','class':'newsPost','style':'border:none;','scrolling':'no','height':'0','src':url+i+fileName+'.html'}));
+    insertDiv('#infobox #news',1,setDivAtt({'div':'iframe','class':'newsPost','style':'border:none;','scrolling':'no','height':'0','src':url+(postCount-i+1)+fileName+'.html'}));
     iFrame[i].height = iFrame[i].contentWindow.document.body.scrollHeight;
   }
   /*
