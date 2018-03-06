@@ -36,7 +36,7 @@ function getNews(postCount) {
   //sets all iframes under #news to their individual content heights.
   window.addEventListener('load', function(e) {
     console.log('retrieving news');
-    //i=0;
+    i=0;
     var iFrame = document.querySelectorAll('.newsPost');
     for(i=0;i<iFrame.length;i++) {
       console.log(i+' = '+(!RegExp('Page not found').test(iFrame[i].contentDocument.title)));
