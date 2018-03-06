@@ -27,6 +27,8 @@ function loadNews() {
 function getNews(postCount) {
   //grabs text files from var url in loadNews()
   for (var i=1;i<=5;i++) {
+    console.log('1st i = '+i);
+    console.log('postCount = '+(postCount-i));
     insertDiv('#infobox #news',i,setDivAtt({'div':'iframe','class':'newsPost','style':'border:none;','scrolling':'no','height':'0','src':url+(postCount-i)+fileName+'.html'}));
   }
   
