@@ -9,6 +9,7 @@ function loadNews() {
       if (xhttp.status) {
         statusType = Math.floor(xhttp.status/100);
         if(statusType == 2) {
+          console.log(xhttp);
           postCount++;
         } else if(statusType == 4) {
           console.log('Number of Posts = '+postCount);
@@ -36,7 +37,6 @@ function getNews(postCount) {
   //sets all iframes under #news to their individual content heights.
   window.addEventListener('load', function(e) {
     console.log('retrieving news');
-    //i=0;
     var iFrame = document.querySelectorAll('.newsPost');
     for(let i=0;i<iFrame.length;i++) {
       console.log(i+' = '+(!RegExp('Page not found').test(iFrame[i].contentDocument.title)));
