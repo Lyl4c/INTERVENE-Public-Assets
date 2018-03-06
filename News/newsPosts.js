@@ -1,4 +1,4 @@
-let Lylac = {
+var Lylac = {
   
   //News Post Crawler; Returns # of posts found in url param
   loadNews: function(url,fileName,postCount=0) {
