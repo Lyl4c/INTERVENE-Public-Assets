@@ -23,7 +23,7 @@ function loadNews(url,fileName,postCount=0) {
           return;
         }
       }
-      loadNews();
+      //loadNews();
     }
   }
   xhttp.send();
