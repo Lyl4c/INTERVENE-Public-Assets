@@ -32,6 +32,7 @@ function getNews(postCount) {
     console.log('1st i = '+i);
     var iframe = insertDiv('#infobox #news',1,setDivAtt({'div':'iframe','class':'newsPost','style':'border:none;','scrolling':'no','height':'0'}));
     iframe.onload = function() {
+      console.log(iframe);
       /*
       //console.log(i+' = '+(!RegExp('Page not found').test(iFrame.contentDocument.title)));
       console.log(i+' = '+iFrame.contentWindow.document.body.scrollHeight);
@@ -41,7 +42,6 @@ function getNews(postCount) {
       */
     }
     iframe.src = url+(postCount-i+1)+fileName+'.html';
-
   }
   
   //sets all iframes under #news to their individual content heights.
