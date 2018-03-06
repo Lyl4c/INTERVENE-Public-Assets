@@ -6,7 +6,7 @@ var fileName = '-intervene'
 console.log('import successful');
 
 //News Post Crawler; Returns # of posts found in url param
-function loadNews(url,fileName,postCount=0) {
+function loadNews(url,fileName,let postCount=0) {
   console.log(url);
   console.log(fileName);
   console.log(postCount);
@@ -24,7 +24,7 @@ function loadNews(url,fileName,postCount=0) {
           return;
         }
       }
-      //loadNews();
+      loadNews();
     }
   }
   xhttp.send();
