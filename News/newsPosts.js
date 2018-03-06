@@ -32,9 +32,8 @@ function getNews(postCount) {
     //console.log('postCount = '+(postCount-i+1));
     insertDiv('#infobox #news',1,setDivAtt({'div':'iframe','class':'newsPost','style':'border:none;','scrolling':'no','height':'0','src':url+i+fileName+'.html'}));
   }
-  
   //i = 0;
-  
+  console.log('between = '+i);
   //sets all iframes under #news to their individual content heights.
   window.addEventListener('load', function(e) {
     console.log('retrieving news');
