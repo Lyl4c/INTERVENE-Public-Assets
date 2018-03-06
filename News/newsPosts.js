@@ -24,7 +24,7 @@ function loadNews(url,fileName,postCount=0) {
           return;
         }
       }
-      loadNews();
+      loadNews(url,fileName,postCount);
     }
   }
   xhttp.send();
