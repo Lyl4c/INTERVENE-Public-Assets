@@ -26,10 +26,10 @@ function loadNews() {
 
 function getNews(postCount) {
   //grabs text files from var url in loadNews()
-  for (var i=1;i<=5;i++) {
+  for (var i=(postCount-4);i<=postCount;i++) {
     console.log('1st i = '+i);
-    console.log('postCount = '+(postCount-i+1));
-    insertDiv('#infobox #news',i,setDivAtt({'div':'iframe','class':'newsPost','style':'border:none;','scrolling':'no','height':'0','src':url+(postCount-i+1)+fileName+'.html'}));
+    //console.log('postCount = '+(postCount-i+1));
+    insertDiv('#infobox #news',i,setDivAtt({'div':'iframe','class':'newsPost','style':'border:none;','scrolling':'no','height':'0','src':url+i+fileName+'.html'}));
   }
   
   //sets all iframes under #news to their individual content heights.
