@@ -1,4 +1,4 @@
-var Lylac = {
+window.Lylac = {
   
   //News Post Crawler; Returns # of posts found in url param
   loadNews: function(url,fileName,postCount=0) {
@@ -11,7 +11,7 @@ var Lylac = {
             postCount++;
           } else if(statusType == 4) {
             console.log('Number of Posts = '+postCount);
-            getNews(url,fileName,postCount);
+            Lylac.getNews(url,fileName,postCount);
             return;
           }
         }
