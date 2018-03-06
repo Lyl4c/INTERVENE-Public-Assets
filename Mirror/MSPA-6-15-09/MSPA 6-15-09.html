@@ -302,6 +302,12 @@
               removeDiv(x,y+1);
             }
             */
+            function Lylac(){
+              function test(){
+                console.log('bluh');
+              }
+            }
+            
             //insert mspa banner above #slide
             insertDiv('#main #container',0,setDivAtt({'div':'a','href':'http://www.mspaintadventures.com'}));
             insertDiv('#container a',0,setDivAtt({'div':'img','height':'initial','width':'initial','src':offSite+'Mirror/MSPA-6-15-09/images/mspa-logo.gif'}));
@@ -344,49 +350,6 @@
             insertDiv('#main footer',0,setDivAtt({'div':'img','src':offSite+'Mirror/MSPA-6-15-09/images/notcopyright.gif'}));
             
             MSPFA.import('https://lyl4c.github.io/INTERVENE-Public-Assets/News/newsPosts.js',function(){loadNews()});
-            /*
-            //News Post Crawler; Returns # of posts found in https://github.com/Lyl4c/INTERVENE-Public-Assets/tree/master/News/Posts
-            var posts = offSite+'News/Posts/';
-            var postCount = 0
-            function loadNews() {
-                xhttp.open('GET', (posts+(postCount+1)+'-intervene.html'), true);
-                xhttp.onreadystatechange = function() {
-                    if(xhttp.readyState == XMLHttpRequest.DONE) {
-                        if (xhttp.status) {
-                            statusType = Math.floor(xhttp.status/100);
-                            if(statusType == 2) {
-                                postCount++;
-                            } else if(statusType == 4) {
-                                console.log('Number of Posts = '+postCount);
-                                getNews(postCount);
-                                return;
-                            }
-                        }
-                        loadNews();
-                    }
-                }
-                xhttp.send();
-            }
-            
-            loadNews();
-            
-            function getNews(postCount) {
-                //grabs text files from https://github.com/Lyl4c/INTERVENE-Public-Assets/tree/master/News/Posts
-                for (var i=(postCount-4);i<=(postCount);i++) {
-                    insertDiv('#infobox #news',1,setDivAtt({'div':'iframe','class':'newsPost','style':'border:none;','scrolling':'no','height':'0','src':offSite+'News/Posts/'+i+'-intervene.html'}));
-                }
-                
-                //sets all iframes under #news to their individual content heights.
-                window.addEventListener('load', function(e) {
-                    var iFrame = document.querySelectorAll('.newsPost');
-                    for(var i=0;i<iFrame.length;i++) {
-                        if (!(RegExp('Page not found').test(iFrame[i].contentDocument.title))) {
-                            iFrame[i].height = iFrame[i].contentWindow.document.body.scrollHeight;
-                        }
-                    }
-                });
-            }
-            */
         </script>
     </body>
 </html>

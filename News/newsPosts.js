@@ -1,8 +1,9 @@
 var postCount = 0
 var url = 'https://lyl4c.github.io/INTERVENE-Public-Assets/News/Posts/'
 var fileName = '-intervene'
-console.log('import successful');
-function loadNews() {
+
+//News Post Crawler; Returns # of posts found in url param
+function loadNews(url, fileName, postCount) {
   xhttp.open('GET', url+(postCount+1)+fileName+'.html', true);
   xhttp.onreadystatechange = function() {
     if(xhttp.readyState == XMLHttpRequest.DONE) {
@@ -23,35 +24,18 @@ function loadNews() {
 }
 
 //loadNews();
-var iFrame = document.querySelectorAll('.newsPost');
 
 function getNews(postCount) {
-  //grabs text files from var url in loadNews()
   for (let i=1;i<=5;i++) {
-    //console.log(url+i+fileName+'.html');
-    console.log('1st i = '+i);
-    var iframe = insertDiv('#infobox #news',1,setDivAtt({'div':'iframe','class':'newsPost','style':'border:none;','scrolling':'no','height':'0'}));
+    //grabs text files from url param
+    let iframe = insertDiv('#infobox #news',i,setDivAtt({'div':'iframe','class':'newsPost','style':'border:none;','scrolling':'no','height':'0'}));
+    //sets all iframes under #news to their individual content heights.
     iframe.onload = function() {
-      //console.log(i+' = '+(!RegExp('Page not found').test(this.contentDocument.title)));
-      console.log(i+' = '+this.contentWindow.document.body.scrollHeight);
       if (!RegExp('Page not found').test(this.contentDocument.title)) {
         this.height = this.contentWindow.document.body.scrollHeight;
       }
     }
-    iframe.src = url+(postCount-i+1)+fileName+'.html';  
+    iframe.src = url+(postCount-i+1)+fileName+'.html';
   }
-  
-  //sets all iframes under #news to their individual content heights.
- /*  window.addEventListener('load', function(e) {
-    console.log('retrieving news');
-    var iFrame = document.querySelectorAll('.newsPost');
-    for(let i=0;i<iFrame.length;i++) {
-      console.log(i+' = '+(!RegExp('Page not found').test(iFrame[i].contentDocument.title)));
-      console.log(i+' = '+iFrame[i].contentWindow.document.body.scrollHeight);
-      if (!RegExp('Page not found').test(iFrame[i].contentDocument.title)) {
-        iFrame[i].height = iFrame[i].contentWindow.document.body.scrollHeight;
-      }
-    }
-  }); */
   console.log('loaded news posts');
 }
