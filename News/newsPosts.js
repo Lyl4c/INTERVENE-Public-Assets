@@ -39,7 +39,7 @@ function getNews(postCount) {
         iFrame[i].height = iFrame[i].contentWindow.document.body.scrollHeight;
       }
     }
-    iframe.scr = url+(postCount-i+1)+fileName+'.html';
+    iframe.src = url+(postCount-i+1)+fileName+'.html';
 
   }
   
