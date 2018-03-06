@@ -26,8 +26,8 @@ function loadNews() {
 
 function getNews(postCount) {
   //grabs text files from var url in loadNews()
-  for (var i=(postCount-4);i<=(postCount);i++) {
-    insertDiv('#infobox #news',1,setDivAtt({'div':'iframe','class':'newsPost','style':'border:none;','scrolling':'no','height':'0','src':url+i+'-intervene.html'}));
+  for (var i=1;i<=5;i++) {
+    insertDiv('#infobox #news',i,setDivAtt({'div':'iframe','class':'newsPost','style':'border:none;','scrolling':'no','height':'0','src':url+(postCount-i)+fileName+'.html'}));
   }
   
   //sets all iframes under #news to their individual content heights.
