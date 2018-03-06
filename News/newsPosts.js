@@ -7,10 +7,6 @@ console.log('import successful');
 
 //News Post Crawler; Returns # of posts found in url param
 function loadNews(url,fileName,postCount=0) {
-  console.log(url);
-  console.log(fileName);
-  console.log(postCount);
-  console.log(url+(postCount+1)+fileName+'.html');
   xhttp.open('GET', url+(postCount+1)+fileName+'.html', true);
   xhttp.onreadystatechange = function() {
     if(xhttp.readyState == XMLHttpRequest.DONE) {
