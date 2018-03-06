@@ -302,12 +302,6 @@
               removeDiv(x,y+1);
             }
             */
-            function Lylac(){
-              function test(){
-                console.log('bluh');
-              }
-            }
-            
             //insert mspa banner above #slide
             insertDiv('#main #container',0,setDivAtt({'div':'a','href':'http://www.mspaintadventures.com'}));
             insertDiv('#container a',0,setDivAtt({'div':'img','height':'initial','width':'initial','src':offSite+'Mirror/MSPA-6-15-09/images/mspa-logo.gif'}));
@@ -349,7 +343,7 @@
             //fake copyright image. its here to mimic the real copyright image used in ye olde mspaintadventures times
             insertDiv('#main footer',0,setDivAtt({'div':'img','src':offSite+'Mirror/MSPA-6-15-09/images/notcopyright.gif'}));
             
-            MSPFA.import('https://lyl4c.github.io/INTERVENE-Public-Assets/News/newsPosts.js',function(){loadNews()});
+            MSPFA.import(offSite+'News/newsPosts.js',function(){loadNews(offSite+'News/Posts/','-intervene')});
         </script>
     </body>
 </html>

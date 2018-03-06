@@ -3,7 +3,7 @@ var url = 'https://lyl4c.github.io/INTERVENE-Public-Assets/News/Posts/'
 var fileName = '-intervene'
 
 //News Post Crawler; Returns # of posts found in url param
-function loadNews(url, fileName, postCount) {
+function loadNews(url, fileName, postCount=0) {
   xhttp.open('GET', url+(postCount+1)+fileName+'.html', true);
   xhttp.onreadystatechange = function() {
     if(xhttp.readyState == XMLHttpRequest.DONE) {
