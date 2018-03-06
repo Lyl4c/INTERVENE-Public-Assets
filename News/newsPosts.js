@@ -30,11 +30,21 @@ function getNews(postCount) {
   for (let i=1;i<=5;i++) {
     //console.log(url+i+fileName+'.html');
     console.log('1st i = '+i);
-    insertDiv('#infobox #news',1,setDivAtt({'div':'iframe','class':'newsPost','style':'border:none;','scrolling':'no','height':'0','src':url+(postCount-i+1)+fileName+'.html'}));
+    var iframe = document.createElement('#infobox #news',1,setDivAtt({'div':'iframe','class':'newsPost','style':'border:none;','scrolling':'no','height':'0'}));
+    iframe.onload = function() {
+      alert('loaded');
+      console.log(i+' = '+(!RegExp('Page not found').test(iFrame[i].contentDocument.title)));
+      console.log(i+' = '+iFrame[i].contentWindow.document.body.scrollHeight);
+      if (!RegExp('Page not found').test(iFrame[i].contentDocument.title)) {
+        iFrame[i].height = iFrame[i].contentWindow.document.body.scrollHeight;
+      }
+    }
+    iframe.scr = url+(postCount-i+1)+fileName+'.html';
+
   }
   
   //sets all iframes under #news to their individual content heights.
-  window.addEventListener('load', function(e) {
+ /*  window.addEventListener('load', function(e) {
     console.log('retrieving news');
     var iFrame = document.querySelectorAll('.newsPost');
     for(let i=0;i<iFrame.length;i++) {
@@ -44,6 +54,6 @@ function getNews(postCount) {
         iFrame[i].height = iFrame[i].contentWindow.document.body.scrollHeight;
       }
     }
-  });
+  }); */
   console.log('loaded news posts');
 }
