@@ -277,7 +277,7 @@
             function setDivAtt(x) {
                 var temp = new newDiv(x.div);
                 delete x.div;
-                for (var i in x) {
+                for (let i in x) {
                     temp.setAttribute(i,x[i]);
                 }
                 return temp;
@@ -324,7 +324,7 @@
             removeDiv('#info #infobox tr',5);
             
             //trim string length in #latestpages
-            for (var i=0;i<document.querySelectorAll('#latestpages div > span').length;i++) {
+            for (let i=0;i<document.querySelectorAll('#latestpages div > span').length;i++) {
                 if (getByClass('#latestpages a > span',i).innerHTML.length > 25) {
                     getByClass('#latestpages a > span',i).innerHTML = getByClass('#latestpages a > span',i).innerHTML.slice(0,25)+'...';
                 }
