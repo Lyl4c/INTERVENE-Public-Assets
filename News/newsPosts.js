@@ -1,5 +1,4 @@
 window.Lylac = {
-  
   //News Post Crawler; Returns # of posts found in url param
   loadNews: function(url,fileName,postCount=0) {
     xhttp.open('GET', url+(postCount+1)+fileName+'.html', true);
