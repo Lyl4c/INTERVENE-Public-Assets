@@ -30,7 +30,7 @@ function getNews(postCount) {
   for (let i=1;i<=5;i++) {
     //console.log(url+i+fileName+'.html');
     console.log('1st i = '+i);
-    var iframe = document.createElement('#infobox #news',1,setDivAtt({'div':'iframe','class':'newsPost','style':'border:none;','scrolling':'no','height':'0'}));
+    var iframe = insertDiv('#infobox #news',1,setDivAtt({'div':'iframe','class':'newsPost','style':'border:none;','scrolling':'no','height':'0'}));
     iframe.onload = function() {
       alert('loaded');
       console.log(i+' = '+(!RegExp('Page not found').test(iFrame[i].contentDocument.title)));
