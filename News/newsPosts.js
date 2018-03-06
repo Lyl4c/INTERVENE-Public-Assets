@@ -30,11 +30,9 @@ function getNews(postCount) {
   for (let i=1;i<=5;i++) {
     //console.log(url+i+fileName+'.html');
     console.log('1st i = '+i);
-    //console.log('postCount = '+(postCount-i+1));
     insertDiv('#infobox #news',1,setDivAtt({'div':'iframe','class':'newsPost','style':'border:none;','scrolling':'no','height':'0','src':url+(postCount-i+1)+fileName+'.html'}));
   }
-  console.log(iFrame);
-  /*
+  
   //sets all iframes under #news to their individual content heights.
   window.addEventListener('load', function(e) {
     console.log('retrieving news');
@@ -47,6 +45,5 @@ function getNews(postCount) {
       }
     }
   });
-  */
   console.log('loaded news posts');
 }
