@@ -1,7 +1,7 @@
 var Lylac = {
   //news setup
   setupNews: function(selector,selectorChild) {
-    let temp = new document.createElement('div');
+    let temp = document.createElement('div');
     temp.id = '#adventureNews';
     console.log(temp);
     document.querySelectorAll(selector).insertBefore(temp,document.querySelectorAll(selector).childeNodes[selectorChild]);
