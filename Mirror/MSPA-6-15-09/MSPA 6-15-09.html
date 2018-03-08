@@ -344,7 +344,9 @@
             insertDiv('#main footer',0,setDivAtt({'div':'img','src':offSite+'Mirror/MSPA-6-15-09/images/notcopyright.gif'}));
             
             //news setup
-            MSPFA.import(offSite+'News/newsPosts.js',function(){Lylac.setupNews(offSite+'News/Posts/','-intervene')});
+            MSPFA.import(offSite+'News/newsPosts.js');
+            Lylac.setupNews('#info #infobox',1);
+            Lylac.loadNews(offSite+'News/Posts/','-intervene');
         </script>
     </body>
 </html>

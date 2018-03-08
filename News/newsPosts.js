@@ -1,8 +1,11 @@
 window.Lylac = {
   //news setup
   //insertDiv('#info #infobox',1,setDivAtt({'div':'div','id':'news'}));
-  setupNews: function(selector) {
-    //document.querySelectorAll(selector).insertBefore(,document.querySelectorAll(selector).childeNodes[0]);
+  setupNews: function(selector,selectorChild) {
+    let temp = new document.createElement('div');
+    temp.id = '#adventureNews';
+    console.log(temp);
+    document.querySelectorAll(selector).insertBefore(temp,document.querySelectorAll(selector).childeNodes[selectorChild]);
   }
   
   //News Post Crawler; Returns # of posts found in url param
@@ -30,7 +33,16 @@ window.Lylac = {
     for (let i=1;i<=5;i++) {
       //grabs text files from url param
       
-      let iframe = insertDiv('#infobox #news',i,setDivAtt({'div':'iframe','class':'newsPost','style':'border:none;','scrolling':'no','height':'0'}));
+      //insertDiv('#infobox #adventureNews',i,setDivAtt({'div':'iframe','class':'newsPost','style':'border:none;','scrolling':'no','height':'0'}));
+      let temp =  new document.createElement('iframe');
+      temp.class = 'newsPost';
+      temp.style = 'border:none;';
+      temp.scrolling = 'no';
+      temp.height = '0';
+      console.log(temp);
+      
+      let iframe = document.querySelectorAll('#adventureNews').insertBefore(temp,document.querySelectorAll('#adventureNews').childeNodes[0]);
+      console.log(iframe);
       
       //sets all iframes under #news to their individual content heights.
       iframe.onload = function() {
