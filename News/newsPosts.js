@@ -4,7 +4,8 @@ var Lylac = {
     let temp = document.createElement('div');
     temp.id = '#adventureNews';
     console.log(temp);
-    document.querySelectorAll(selector).insertBefore(temp,document.querySelectorAll(selector).childeNodes[selectorChild]);
+    console.log(document.querySelectorAll(selector));
+    document.querySelectorAll(selector).insertBefore(temp,document.querySelectorAll(selector).childNodes[selectorChild]);
   },
   
   //News Post Crawler; Returns # of posts found in url param
