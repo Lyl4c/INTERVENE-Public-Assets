@@ -273,6 +273,9 @@
             //https://web.archive.org/web/20090619195506/http://www.mspaintadventures.com:80/?s=6&p=002154
             var xhttp = new XMLHttpRequest();
             var offSite = 'https://lyl4c.github.io/INTERVENE-Public-Assets/'
+            document.onload = function() {
+              MSPFA.import(offSite+'News/newsPosts.js');
+            }
             function newDiv(x) {return document.createElement(x);}
             function getByClass(x,y=0) {return document.querySelectorAll(x)[y];}
             function setDivAtt(x) {
@@ -342,10 +345,13 @@
             //fake copyright image. its here to mimic the real copyright image used in ye olde mspaintadventures times
             insertDiv('#main footer',0,setDivAtt({'div':'img','src':offSite+'Mirror/MSPA-6-15-09/images/notcopyright.gif'}));
             
+            /*
             //news setup
-            MSPFA.import(offSite+'News/newsPosts.js');
-            Lylac.setupNews('#info #infobox',1);
-            Lylac.loadNews(offSite+'News/Posts/','-intervene');
+            MSPFA.import(offSite+'News/newsPosts.js',function(){
+                Lylac.setupNews('#info #infobox',1);
+                Lylac.loadNews(offSite+'News/Posts/','-intervene');
+            });
+            */
         </script>
     </body>
 </html>
