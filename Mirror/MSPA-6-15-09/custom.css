@@ -197,7 +197,7 @@ nav > a:nth-child(-n+3) {
   margin: auto;
 }
 
-#news .newsPost {
+#adventureNews .newsPost {
   display: inherit;
   margin: 4px auto;
   width: 533px;

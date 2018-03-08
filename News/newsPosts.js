@@ -33,7 +33,7 @@ var Lylac = {
       
       //insertDiv('#infobox #adventureNews',i,setDivAtt({'div':'iframe','class':'newsPost','style':'border:none;','scrolling':'no','height':'0'}));
       let temp = document.createElement('iframe');
-      temp.class = 'newsPost';
+      temp.className = 'newsPost';
       temp.style = 'border:none;';
       temp.scrolling = 'no';
       temp.height = '0';
