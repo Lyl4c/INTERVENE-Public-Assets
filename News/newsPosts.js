@@ -53,4 +53,3 @@ var Lylac = {
     }
   }
 }
-console.log(Lylac);
