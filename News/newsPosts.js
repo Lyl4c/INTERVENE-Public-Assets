@@ -2,7 +2,7 @@ var Lylac = {
   //news setup
   setupNews: function(selector,selectorChild) {
     let temp = document.createElement('div');
-    temp.id = '#adventureNews';
+    temp.id = 'adventureNews';
     document.querySelector(selector).insertBefore(temp,document.querySelector(selector).childNodes[selectorChild]);
   },
   
