@@ -29,25 +29,21 @@ var Lylac = {
   
   getNews: function(url,fileName,postCount) {
     for (let i=1;i<=5;i++) {
-      //grabs text files from url param
-      
-      //insertDiv('#infobox #adventureNews',i,setDivAtt({'div':'iframe','class':'newsPost','style':'border:none;','scrolling':'no','height':'0'}));
       let temp = document.createElement('iframe');
       temp.className = 'newsPost';
       temp.style = 'border:none;';
       temp.scrolling = 'no';
       temp.height = '0';
-      console.log(temp);
       
       let iframe = document.querySelector('#adventureNews').insertBefore(temp,document.querySelector('#adventureNews').childNodes[0]);
-      console.log(iframe);
       
-      //sets all iframes under #news to their individual content heights.
+      //sets all iframes under #adventureNews to their individual content heights.
       iframe.onload = function() {
         if (!RegExp('Page not found').test(this.contentDocument.title)) {
           this.height = this.contentWindow.document.body.scrollHeight;
         }
       }
+      //grabs text files from url param
       iframe.src = url+(postCount-i+1)+fileName+'.html';
     }
   }
