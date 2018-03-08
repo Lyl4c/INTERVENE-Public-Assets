@@ -39,7 +39,7 @@ var Lylac = {
       temp.height = '0';
       console.log(temp);
       
-      let iframe = document.querySelector('#adventureNews').insertBefore(temp,document.querySelector('#adventureNews').childeNodes[0]);
+      let iframe = document.querySelector('#adventureNews').insertBefore(temp,document.querySelector('#adventureNews').childNodes[0]);
       console.log(iframe);
       
       //sets all iframes under #news to their individual content heights.
