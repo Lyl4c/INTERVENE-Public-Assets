@@ -1,4 +1,10 @@
 window.Lylac = {
+  //news setup
+  //insertDiv('#info #infobox',1,setDivAtt({'div':'div','id':'news'}));
+  setupNews: function(selector) {
+    //document.querySelectorAll(selector).insertBefore(,document.querySelectorAll(selector).childeNodes[0]);
+  }
+  
   //News Post Crawler; Returns # of posts found in url param
   loadNews: function(url,fileName,postCount=0) {
     xhttp.open('GET', url+(postCount+1)+fileName+'.html', true);
@@ -23,7 +29,9 @@ window.Lylac = {
   getNews: function(url,fileName,postCount) {
     for (let i=1;i<=5;i++) {
       //grabs text files from url param
+      
       let iframe = insertDiv('#infobox #news',i,setDivAtt({'div':'iframe','class':'newsPost','style':'border:none;','scrolling':'no','height':'0'}));
+      
       //sets all iframes under #news to their individual content heights.
       iframe.onload = function() {
         if (!RegExp('Page not found').test(this.contentDocument.title)) {

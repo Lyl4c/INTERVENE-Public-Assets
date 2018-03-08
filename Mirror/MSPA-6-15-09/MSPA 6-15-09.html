@@ -281,6 +281,7 @@
                 for (let i in x) {
                     temp.setAttribute(i,x[i]);
                 }
+                console.log(temp);
                 return temp;
             }
             //x = target div | y = child target | z = new Div
@@ -336,14 +337,14 @@
             cloneDiv('#infobox .spoiler div:last-of-type',1,'#infobox #adventureinfo',0);
             removeDiv('#info #infobox',2);
             
-            //news setup
-            insertDiv('#info #infobox',1,setDivAtt({'div':'div','id':'news'}));
-            insertDiv('#infobox #news',0,setDivAtt({'div':'img','height':'initial','width':'initial','src':offSite+'Mirror/MSPA-6-15-09/images/newsimg.gif'}));
+            //insertDiv('#info #infobox',1,setDivAtt({'div':'div','id':'news'}));
+            insertDiv('#info #infobox',1,setDivAtt({'div':'img','height':'initial','width':'initial','src':offSite+'Mirror/MSPA-6-15-09/images/newsimg.gif'}));
             
             //fake copyright image. its here to mimic the real copyright image used in ye olde mspaintadventures times
             insertDiv('#main footer',0,setDivAtt({'div':'img','src':offSite+'Mirror/MSPA-6-15-09/images/notcopyright.gif'}));
             
-            MSPFA.import(offSite+'News/newsPosts.js',function(){Lylac.loadNews(offSite+'News/Posts/','-intervene')});
+            //news setup
+            MSPFA.import(offSite+'News/newsPosts.js',function(){Lylac.setupNews(offSite+'News/Posts/','-intervene')});
         </script>
     </body>
 </html>
