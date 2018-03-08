@@ -3,9 +3,7 @@ var Lylac = {
   setupNews: function(selector,selectorChild) {
     let temp = document.createElement('div');
     temp.id = '#adventureNews';
-    console.log(temp);
-    console.log(document.querySelectorAll(selector));
-    document.querySelectorAll(selector).insertBefore(temp,document.querySelectorAll(selector).childNodes[selectorChild]);
+    document.querySelector(selector)[0].insertBefore(temp,document.querySelector(selector).childNodes[selectorChild]);
   },
   
   //News Post Crawler; Returns # of posts found in url param
@@ -41,7 +39,7 @@ var Lylac = {
       temp.height = '0';
       console.log(temp);
       
-      let iframe = document.querySelectorAll('#adventureNews').insertBefore(temp,document.querySelectorAll('#adventureNews').childeNodes[0]);
+      let iframe = document.querySelector('#adventureNews').insertBefore(temp,document.querySelector('#adventureNews').childeNodes[0]);
       console.log(iframe);
       
       //sets all iframes under #news to their individual content heights.
