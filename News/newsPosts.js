@@ -33,7 +33,7 @@ var Lylac = {
       //grabs text files from url param
       
       //insertDiv('#infobox #adventureNews',i,setDivAtt({'div':'iframe','class':'newsPost','style':'border:none;','scrolling':'no','height':'0'}));
-      let temp =  new document.createElement('iframe');
+      let temp = document.createElement('iframe');
       temp.class = 'newsPost';
       temp.style = 'border:none;';
       temp.scrolling = 'no';
