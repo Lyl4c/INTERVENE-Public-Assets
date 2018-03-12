@@ -2,7 +2,7 @@
 //Assistance provided by: sickhippie, Miroware
 //This can load News Posts from an external source if set up correctly.
 var Lylac = {
-  //news setup
+  //Initial setup
   //STRING selector = target div | The parent div of where you want to put your posts.
   //NUMBER selectorChild = child div of target div | Where you actually want to place your posts.
   setupNews: function(selector,selectorChild=0) {
