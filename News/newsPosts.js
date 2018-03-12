@@ -47,9 +47,9 @@ var Lylac = {
     temp.scrolling = 'no';
     temp.height = '0';
     
-    let iframe = document.querySelector('#adventureNews').insertBefore(temp,document.querySelector('#adventureNews').childNodes[0]);
-    
     for (let i=1;i<=5;i++) {
+      let iframe = document.querySelector('#adventureNews').insertBefore(temp,document.querySelector('#adventureNews').childNodes[0]);
+      
       //sets all iframes under #adventureNews to their individual content heights when loaded.
       iframe.onload = function() {
         if (!RegExp('Page not found').test(this.contentDocument.title)) {
