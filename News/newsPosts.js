@@ -40,14 +40,14 @@ var Lylac = {
   
   //parameters are provided by loadNews()
   getNews: function(url,fileName,postCount) {
-    //News Setup
-    let temp = document.createElement('iframe');
-    temp.className = 'newsPost';
-    temp.style = 'border:none;';
-    temp.scrolling = 'no';
-    temp.height = '0';
-    
     for (let i=1;i<=5;i++) {
+      //News Setup
+      let temp = document.createElement('iframe');
+      temp.className = 'newsPost';
+      temp.style = 'border:none;';
+      temp.scrolling = 'no';
+      temp.height = '0';
+      
       let iframe = document.querySelector('#adventureNews').insertBefore(temp,document.querySelector('#adventureNews').childNodes[0]);
       
       //sets all iframes under #adventureNews to their individual content heights when loaded.
