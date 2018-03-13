@@ -38,7 +38,11 @@ body {
 /* ################### */
 
 .umcontainer {
-  display: flex;
+    width: 800px;
+}
+
+.um {
+    width: 643px;
 }
 
 header .mspfalogo {
