@@ -29,7 +29,10 @@ function removeDiv(x, y) {
 }
 //x.xc = target old div.child | y.yc = new div.child
 function cloneDiv(x, xc, y, yc) {
-    return getByClass(y).insertBefore(getByClass(x).childNodes[xc].cloneNode(true), getByClass(y).childNodes[yc]);
+    return getByClass(y).insertBefore(
+        getByClass(x).childNodes[xc].cloneNode(true),
+        getByClass(y).childNodes[yc]
+    );
 }
 /*
 //unused function
@@ -67,7 +70,7 @@ insertDiv('#commentbox div div',0,setDivAtt({'div':'input','type':'image','src':
 insertDiv('#slide #foot',0,setDivAtt({'div':'br'}));
 */
 //move footer umcontainer above #info
-cloneDiv('#main footer', 1, '#main #container', 3);
+/* cloneDiv('#main footer', 1, '#main #container', 3);
 removeDiv('#main footer', 1);
 
 //move latestpages above #infobox 
@@ -76,7 +79,7 @@ insertDiv('#container #info', 0, setDivAtt({
     'id': 'latestpages'
 }));
 cloneDiv('#infobox #latestpages .spoiler', 1, '#info #latestpages', 0);
-removeDiv('#info #infobox tr', 2);
+removeDiv('#info #infobox tr', 2); */
 
 //trim string length in #latestpages
 for (let i = 0; i < document.querySelectorAll('#latestpages div > span').length; i++) {

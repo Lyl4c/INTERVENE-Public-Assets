@@ -301,6 +301,29 @@
               removeDiv(x,y+1);
             }
             */
+           
+           function swapElements(obj1, obj2) {
+                // save the location of obj2
+                var parent2 = obj2.parentNode;
+                var next2 = obj2.nextSibling;
+                // special case for obj1 is the next sibling of obj2
+                if (next2 === obj1) {
+                    // just put obj1 before obj2
+                    parent2.insertBefore(obj1, obj2);
+                } else {
+                    // insert obj2 right before obj1
+                    obj1.parentNode.insertBefore(obj2, obj1);
+
+                    // now insert obj1 where obj2 was
+                    if (next2) {
+                        // if there was an element after obj2, then insert obj1 right before that
+                        parent2.insertBefore(obj1, next2);
+                    } else {
+                        // otherwise, just append as last child
+                        parent2.appendChild(obj1);
+                    }
+                }
+            }
             //insert mspa banner above #slide
             insertDiv('#main #container',0,setDivAtt({'div':'a','href':'http://www.mspaintadventures.com'}));
             insertDiv('#container a',0,setDivAtt({'div':'img','height':'initial','width':'initial','src':offSite+'Mirror/MSPA-6-15-09/images/mspa-logo.gif'}));
@@ -310,9 +333,11 @@
             removeDiv('#container #info',3);
             
             //replace comment spoiler button with image button
-            removeDiv('#commentbox div div',1);
+            var commentBox = document.querySelector("#commentbox input");
+            //console.log(commentBox);
+            /* removeDiv('#commentbox div div',1);
             insertDiv('#commentbox div div',1,setDivAtt({'div':'input','type':'image','src':offSite+'Mirror/MSPA-6-15-09/images/comment.gif','value':'','data-close':'','data-open':''}));
-            insertDiv('#slide #foot',0,setDivAtt({'div':'br'}));
+            insertDiv('#slide #foot',0,setDivAtt({'div':'br'})); */
             
             //move footer umcontainer above #info
             cloneDiv('#main footer',1,'#main #container',4);
