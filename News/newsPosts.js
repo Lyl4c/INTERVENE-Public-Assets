@@ -1,6 +1,7 @@
 //News Post Script made by Lylac_SYS
 //Assistance provided by: sickhippie, Miroware
 //This can load News Posts from an external source if set up correctly.
+var xhttp = new XMLHttpRequest();
 var Lylac = {
   //Initial setup
   //STRING selector = target div | The parent div of where you want to put your posts.
