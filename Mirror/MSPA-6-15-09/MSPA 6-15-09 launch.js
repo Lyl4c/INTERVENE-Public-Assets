@@ -68,9 +68,9 @@ removeDiv('#container #info',1);
 removeDiv('#commentbox div div',0);
 insertDiv('#commentbox div div',0,setDivAtt({'div':'input','type':'image','src':offSite+'Mirror/MSPA-6-15-09/images/comment.gif','value':'""','data-close':'""','data-open':'""'}));
 insertDiv('#slide #foot',0,setDivAtt({'div':'br'}));
-*/
+
 //move footer umcontainer above #info
-/* cloneDiv('#main footer', 1, '#main #container', 3);
+cloneDiv('#main footer', 1, '#main #container', 3);
 removeDiv('#main footer', 1);
 
 //move latestpages above #infobox 
@@ -79,7 +79,8 @@ insertDiv('#container #info', 0, setDivAtt({
     'id': 'latestpages'
 }));
 cloneDiv('#infobox #latestpages .spoiler', 1, '#info #latestpages', 0);
-removeDiv('#info #infobox tr', 2); */
+removeDiv('#info #infobox tr', 2);
+*/
 
 //trim string length in #latestpages
 for (let i = 0; i < document.querySelectorAll('#latestpages div > span').length; i++) {
