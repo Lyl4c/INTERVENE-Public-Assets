@@ -329,11 +329,11 @@
             
             //move comment box to #slide
             //cloneDiv('#container #info',3,'#container #slide',5);
-            insertDiv('#container #slide',5,setDivAtt({'div':'div'}));
+            //insertDiv('#container #slide',5,setDivAtt({'div':'div'}));
             console.log(getByClass('#container #slide').childNodes[5]);
             console.log(getByClass('#container #info').childNodes[3]);
-            swapElements(getByClass('#container #slide').childNodes[5],getByClass('#container #info').childNodes[3]);
-            removeDiv('#container #info',3);
+            //swapElements(getByClass('#container #slide').childNodes[5],getByClass('#container #info').childNodes[3]);
+            //removeDiv('#container #info',3);
             
             //replace comment spoiler button with image button
             //var commentBox = document.querySelector("#commentbox input");
@@ -348,10 +348,12 @@
             cloneDiv('#main footer',1,'#main #container',4);
             removeDiv('#main footer',1);
             
+            /*
             //move latestpages above #infobox 
             insertDiv('#container #info',0,setDivAtt({'div':'span','id':'latestpages'}));
             cloneDiv('#infobox #latestpages .spoiler',3,'#info #latestpages',0);
             removeDiv('#info #infobox tr',5);
+            */
             
             //trim string length in #latestpages
             for (let i=0;i<document.querySelectorAll('#latestpages div > span').length;i++) {
@@ -360,10 +362,12 @@
                 }
             }
             
+            /*
             //delete adventure info spoiler boxes, move adventure info #adventureinfo
             insertDiv('#info #infobox',0,setDivAtt({'div':'div','id':'adventureinfo'}));
             cloneDiv('#infobox .spoiler div:last-of-type',1,'#infobox #adventureinfo',0);
             removeDiv('#info #infobox',2);
+            */
             
             //insertDiv('#info #infobox',1,setDivAtt({'div':'div','id':'news'}));
             insertDiv('#info #infobox',1,setDivAtt({'div':'img','height':'initial','width':'initial','src':offSite+'Mirror/MSPA-6-15-09/images/newsimg.gif'}));
