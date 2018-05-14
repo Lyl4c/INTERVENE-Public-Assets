@@ -272,7 +272,7 @@
             //https://web.archive.org/web/20090619195506/http://www.mspaintadventures.com:80/?s=6&p=002154
             var offSite = 'https://lyl4c.github.io/INTERVENE-Public-Assets/'
             function newDiv(x) {return document.createElement(x);}
-            function getByClass(x,y=0) {return document.querySelectorAll(x)[y];}
+            function getByClass(x,y='0') {return document.querySelectorAll(x)[y];}
             function setDivAtt(x) {
                 let temp = new newDiv(x.div);
                 delete x.div;
@@ -323,24 +323,34 @@
                 }
             }
             
-            body.onload = function() {
+            //window.addEventListener('load', function(event) {
                 console.log(getByClass('#container #slide').childNodes[5]);
                 console.log(getByClass('#container #info').childNodes[3]);
-                console.log(getByClass('#commentBox input'));
-            }
+                console.log(getByClass('#commentbox input'));
+                //console.log(e.querySelectorAll(".spoiler > div:first-child > input"));
+                console.log(testComments());
+                console.log();
+            //});
             
-            
-            /*
             //insert mspa banner above #slide
             insertDiv('#main #container',0,setDivAtt({'div':'a','href':'http://www.mspaintadventures.com'}));
             insertDiv('#container a',0,setDivAtt({'div':'img','height':'initial','width':'initial','src':offSite+'Mirror/MSPA-6-15-09/images/mspa-logo.gif'}));
+            
+            /* note to self:
+            stuff this:
+            //MSPFA.parseBBCode('<input class="fav major unlit lit" type="button" title="Favorite">',false);
+//insertDiv('#container #slide',5,MSPFA.parseBBCode(getByClass('#container #info').childNodes[3],false).childNodes[0]);
+//console.log(getByClass('#container #info').childNodes[3].innerHTML);
+getByClass('#container #info').childNodes[3];
+            into miro's bbc parser
+            */
             
             //move comment box to #slide
             //cloneDiv('#container #info',3,'#container #slide',5);
             //insertDiv('#container #slide',5,setDivAtt({'div':'div'}));
             //swapElements(getByClass('#container #slide').childNodes[5],getByClass('#container #info').childNodes[3]);
             //removeDiv('#container #info',3);
-            
+            /*
             //replace comment spoiler button with image button
             //var commentBox = document.querySelector("#commentbox input");
             removeDiv('#commentbox div div',1);
