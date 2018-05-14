@@ -107,7 +107,7 @@
                 </div>
                 <div id="info">
                     <span id="infobox">
-                        <div class="spoiler open">
+                        <div class="spoiler closed">
                             <div style="text-align: center;">
                                 <input type="button" value="Show Adventure Info" data-open="Show Adventure Info" data-close="Hide Adventure Info">
                             </div>
@@ -139,7 +139,7 @@
                                             </td>
                                             <td id="latestpages" rowspan="2" style="max-width: 253px; width: 253px; font-size: 10px; font-weight: bold;">
                                                 <span>
-                                                    <div class="spoiler open">
+                                                    <div class="spoiler closed">
                                                         <div style="text-align: center;">
                                                             <input type="button" value="Show Latest Pages" data-open="Show Latest Pages" data-close="Hide Latest Pages">
                                                         </div>
@@ -323,9 +323,12 @@
                 }
             }
             
-            console.log(getByClass('#container #slide').childNodes[5]);
-            console.log(getByClass('#container #info').childNodes[3]);
-            console.log(getByClass('#commentBox input'));
+            window.onload = function() {
+                console.log(getByClass('#container #slide').childNodes[5]);
+                console.log(getByClass('#container #info').childNodes[3]);
+                console.log(getByClass('#commentBox input'));
+            }
+            
             
             /*
             //insert mspa banner above #slide
