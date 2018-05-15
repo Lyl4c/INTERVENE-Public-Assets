@@ -264,8 +264,14 @@
             //https://github.com/Lyl4c/INTERVENE-Public-Assets
             //https://web.archive.org/web/20090619195506/http://www.mspaintadventures.com:80/?s=6&p=002154
             var offSite = 'https://lyl4c.github.io/INTERVENE-Public-Assets/'
-            function newDiv(x) {return document.createElement(x);}
-            function getByClass(x,y='0') {return document.querySelectorAll(x)[y];}
+            function newDiv(x) {
+                return document.createElement(x);
+            }
+            function getByClass(x,y='0') {
+                return document.querySelectorAll(x)[y];
+            }
+            //returns new object | must have at least 1 array entry and the first entry must be an element tag.
+            //ex: setDivAtt({'div':'img','empty':'','var':var});
             function setDivAtt(x) {
                 let temp = new newDiv(x.div);
                 delete x.div;
@@ -275,10 +281,22 @@
                 return temp;
             }
             //x = target div | y = child target | z = new Div
-            function insertDiv(x,y,z){return getByClass(x).insertBefore(z,getByClass(x).childNodes[y]);}
-            function removeDiv(x,y){return getByClass(x).removeChild(getByClass(x).childNodes[y]);}
+            function insertDiv(x,y,z){
+                return getByClass(x).insertBefore(z,getByClass(x).childNodes[y]);
+            }
+            function removeDiv(x,y){
+                return getByClass(x).removeChild(getByClass(x).childNodes[y]);
+            }
             //x.xc = target old div.child | y.yc = new div.child
-            function cloneDiv(x,xc,y,yc){return getByClass(y).insertBefore(getByClass(x).childNodes[xc].cloneNode(true),getByClass(y).childNodes[yc]);}
+            function cloneDiv(x,xc,y,yc){
+                return getByClass(y).insertBefore(getByClass(x).childNodes[xc].cloneNode(true),getByClass(y).childNodes[yc]);
+            }
+            //insert string -> returns object | removes return lines, line feeds, and whitespaces inside the target
+            function compressDiv(x,y){
+                let temp = getByClass(x).childNodes[y].outerHTML;
+                temp = temp.replace(/(?:[\r\n]\s+)/g,'');
+                return MSPFA.parseBBCode(temp,false).childNodes[0];
+            }
             /*
             //unused function
             //sets target div type to new dive type. cannot set target div to its current div type
@@ -293,44 +311,14 @@
               removeDiv(x,y+1);
             }
             */
-            function swapElements(obj1, obj2) {
-                // save the location of obj2
-                var parent2 = obj2.parentNode;
-                var next2 = obj2.nextSibling;
-                // special case for obj1 is the next sibling of obj2
-                if (next2 === obj1) {
-                    // just put obj1 before obj2
-                    parent2.insertBefore(obj1, obj2);
-                } else {
-                    // insert obj2 right before obj1
-                    obj1.parentNode.insertBefore(obj2, obj1);
-                    
-                    // now insert obj1 where obj2 was
-                    if (next2) {
-                        // if there was an element after obj2, then insert obj1 right before that
-                        parent2.insertBefore(obj1, next2);
-                    } else {
-                        // otherwise, just append as last child
-                        parent2.appendChild(obj1);
-                    }
-                }
-            }
-            
-            //window.addEventListener('load', function(event) {
-                console.log(getByClass('#container #slide').childNodes[5]);
-                console.log(getByClass('#container #info').childNodes[3]);
-                console.log(getByClass('#commentbox input'));
-            //});
             
             //insert mspa banner above #slide
             insertDiv('#main #container',0,setDivAtt({'div':'a','href':'http://www.mspaintadventures.com'}));
             insertDiv('#container a',0,setDivAtt({'div':'img','height':'initial','width':'initial','src':offSite+'Mirror/MSPA-6-15-09/images/mspa-logo.gif'}));
             
             //move comment box to #slide
-            //cloneDiv('#container #info',3,'#container #slide',5);
-            //insertDiv('#container #slide',5,setDivAtt({'div':'div'}));
-            //swapElements(getByClass('#container #slide').childNodes[5],getByClass('#container #info').childNodes[3]);
-            //removeDiv('#container #info',3);
+            insertDiv('#container #slide',5,compressDiv('#container #info',3));
+            removeDiv('#container #info',3);
             /*
             //replace comment spoiler button with image button
             //var commentBox = document.querySelector("#commentbox input");
