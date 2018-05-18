@@ -360,10 +360,8 @@
             setDivAtt({'type':'image','src':offSite+'Mirror/MSPA-6-15-09/images/comment.gif','value':'','data-close':'','data-open':''},getTargetDiv('#commentbox div div').childNodes[0]);
             insertDiv('#slide #foot',0,setDivAtt({'div':'br'}));
             
-            /*
             //move footer umcontainer above #info
-            cloneDiv('#main footer',1,'#main #container',4);
-            removeDiv('#main footer',1);
+            insertDiv('#main #container',4,getTargetDiv('#main footer').childNodes[1]);
             
             //move latestpages above #infobox 
             insertDiv('#container #info',0,setDivAtt({'div':'span','id':'latestpages'}));
@@ -379,7 +377,7 @@
             
             //delete adventure info spoiler boxes, move adventure info #adventureinfo
             insertDiv('#info #infobox',0,setDivAtt({'div':'div','id':'adventureinfo'}));
-            cloneDiv('#infobox .spoiler div:last-of-type',1,'#infobox #adventureinfo',0);
+            insertDiv('#infobox #adventureinfo',0,getTargetDiv('#infobox .spoiler div:last-of-type').childNodes[1]);
             removeDiv('#info #infobox',2);
             
             //insertDiv('#info #infobox',1,setDivAtt({'div':'div','id':'news'}));
@@ -387,7 +385,6 @@
             
             //fake copyright image. its here to mimic the real copyright image used in ye olde mspaintadventures times
             insertDiv('#main footer',0,setDivAtt({'div':'img','src':offSite+'Mirror/MSPA-6-15-09/images/notcopyright.gif'}));
-            */
             /*
             //news setup
             MSPFA.import(offSite+'News/newsPosts.js',function(){
