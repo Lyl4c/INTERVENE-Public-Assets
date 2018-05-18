@@ -353,12 +353,12 @@
             insertDiv('#container a',0,setDivAtt({'div':'img','height':'initial','width':'initial','src':offSite+'Mirror/MSPA-6-15-09/images/mspa-logo.gif'}));
 
             //move comment box to #slide
-            insertDiv('#container #slide',5,getTargetDiv('#container #info').childNodes[1]);
+            insertDiv('#container #slide',5,getTargetDiv('#container #info').childNodes[3]);
 
             //replace comment spoiler button with image button
             stripDivAtt('#commentbox div div',0);
             setDivAtt({'type':'image','src':offSite+'Mirror/MSPA-6-15-09/images/comment.gif','value':'','data-close':'','data-open':''},getTargetDiv('#commentbox div div').childNodes[0]);
-            //insertDiv('#slide #foot',0,setDivAtt({'div':'br'}));
+            insertDiv('#slide #foot',0,setDivAtt({'div':'br'}));
             
             /*
             //move footer umcontainer above #info
