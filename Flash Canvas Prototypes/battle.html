@@ -16,9 +16,7 @@
         <link href="//fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="/css/mspfa.css">
         <link rel="stylesheet" type="text/css" href="/css/extra.css">
-        
-        <link rel="stylesheet" type="text/css" href="https://lyl4c.github.io/INTERVENE-Public-Assets/Mirror/MSPA-6-15-09/custom.css">
-        
+
         <!-- <script src="https://apis.google.com/_/scs/apps-static/_/js/k=oz.gapi.en.A3bPl19Ptok.O/m=auth2/rt=j/sv=1/d=1/ed=1/am=AQ/rs=AGLTcCM-1b0_G-ZaXK7b1vtDXTjO7gYpAQ/cb=gapi.loaded_0" async=""></script> -->
         <style></style>
     </head>
@@ -29,7 +27,7 @@
                     <div class="mspfalogo"></div>
                     <iframe class="um" src=""></iframe>
                 </div>
-                
+
                 <nav>
                     <a href="/" style="color: #ffffff;">MSPFA Home</a>
                     <span class="vbar">|</span>
@@ -65,19 +63,32 @@
                     </div>
                     <div id="content">
                         <span>
-                            <br>
-                            <a class="eye_portal" href="http://www.mspaintadventures.com/?s=6&p=002774">
-                                <img src="https://lyl4c.github.io/INTERVENE-Public-Assets/Mirror/MSPA-6-15-09/images/eye-portal-1.gif" class="major">
-                            </a>
-                            <br>
-                            <br>
-                            <img src="http://i.imgur.com/tmKQlEl.gif" class="major">
-                            <br>
-                            <br>
-                            <img src="http://i.imgur.com/JZCmcTI.gif" class="major">
-                            <br>
-                            <br>
-                            After experimenting with the crafting system for a bit; John and SC have managed to leave the grist cache dry.
+                          <style>
+                          </style>
+                          <canvas id='LylacFlash'></canvas>
+                          <script>
+                            console.log('Lylac_SYS: Loaded Battle.js');
+                            //loaded script library
+                            function getTargetDiv(x,y='0') {
+                              return document.querySelectorAll(x)[y];
+                            }
+
+                            var canvas = getTargetDiv('#LylacFlash');
+                            var c = canvas.getContext('2d');
+                            canvas.width = 950;
+                            canvas.height = 650;
+
+                            function init(){
+                              //(((x-h)**2)/a**2)+(((y-v)**2)/b**2)
+                            }
+
+                            function animate(){
+                              requestAnimationFrame(animate);
+                              c.clearRect(0,0,innerWidth,innerHeight);
+                            }
+
+                            animate();
+                          </script>
                         </span>
                     </div>
                     <div id="foot">
@@ -119,21 +130,21 @@
                                                 <img id="storyicon" height="150" width="150" src="http://i.imgur.com/tuC91Bf.png" style="margin-right: 6px;">
                                             </td>
                                             <td style="max-width: 413px; width: 413px;">
-                                                <span class="major" style="font-size: 20px;">INTERVENE</span> 
-                                                <input class="edit major" type="button" title="Edit" style=""> 
-                                                <input class="fav major unlit lit" type="button" title="Favorite"> 
+                                                <span class="major" style="font-size: 20px;">INTERVENE</span>
+                                                <input class="edit major" type="button" title="Edit" style="">
+                                                <input class="fav major unlit lit" type="button" title="Favorite">
                                                 <input class="notify major unlit lit" type="button" title="Notify" style="">
-                                                <br>Ongoing 
-                                                <img src="/images/pages.png" class="smol">89 
+                                                <br>Ongoing
+                                                <img src="/images/pages.png" class="smol">89
                                                 <img src="/images/heart.png" class="smol">22
-                                                <br>Author: 
+                                                <br>Author:
                                                 <a href="http://eagle-time.com/showthread.php?tid=1738">Lylac</a>
-                                                <br>Mirrored by: 
+                                                <br>Mirrored by:
                                                 <span>
                                                     <a href="/user/?u=108942271547290348778">Lylac</a>
                                                 </span>
                                                 <br>No tags
-                                                <br>ID: 
+                                                <br>ID:
                                                 <input readonly="" size="5">
                                                 <br>
                                             </td>
@@ -223,7 +234,7 @@
                                 <input class="major" type="submit" value="Post">
                             </form>
                             <br>
-                            <br>Sort by: 
+                            <br>Sort by:
                                 <select>
                                     <option value="page">Page Number</option>
                                     <option value="newest">Newest</option>
@@ -249,7 +260,7 @@
                 </div>
             </footer>
         </div>
-        
+
         <form id="dialog" style="display: none;">
             <div class="major"></div>
             <div></div>
@@ -259,100 +270,5 @@
         <script src="/js/mspfa.js"></script>
 
         <!-- <iframe aria-hidden="true" id="ssIFrame_google" sandbox="allow-scripts allow-same-origin" style="position: absolute; width: 1px; height: 1px; left: -9999px; display: none;" src="https://accounts.google.com/o/oauth2/iframe#origin=https%3A%2F%2Fmspfa.com&amp;rpcToken=333132674.2333325"></iframe> -->
-        <script>
-            //Script made by Lylac_SYS
-            //https://github.com/Lyl4c/INTERVENE-Public-Assets
-            //https://web.archive.org/web/20090619195506/http://www.mspaintadventures.com:80/?s=6&p=002154
-            var offSite = 'https://lyl4c.github.io/INTERVENE-Public-Assets/'
-
-            function newDiv(x) {
-                return document.createElement(x);
-            }
-            function getTargetDiv(x,y='0') {
-                return document.querySelectorAll(x)[y];
-            }
-            //returns new object or modified object
-            //1ST param must be an array.
-            //OR
-            //2ND param can be a targeted object or null.
-            //EX: setDivAtt({'div':'img','empty':'','var':var},getTargetDiv('#example'));
-            //note that the div entry: ('div':'img') is optional.
-            function setDivAtt(y,x=null) {
-                if (y.div != null) {
-                    x = new newDiv(y.div);
-                    delete y.div;
-                }
-                for (let i in y) {
-                    x.setAttribute(i,y[i]);
-                }
-                return x;
-            }
-            //Target an object to return it as an object without attributes
-            function stripDivAtt(x,y='0') {
-              let temp = getTargetDiv(x).childNodes[y];
-              while (temp.attributes.length > 0) {
-                temp.removeAttribute(temp.attributes[0].name);
-              }
-            }
-            //x = target div | y = child target | z = new Div
-            function insertDiv(x,y,z){
-                return getTargetDiv(x).insertBefore(z,getTargetDiv(x).childNodes[y]);
-            }
-            function removeDiv(x,y){
-                return getTargetDiv(x).removeChild(getTargetDiv(x).childNodes[y]);
-            }
-            //x.xc = target old div.child | y.yc = new div.child
-            function cloneDiv(x,xc,y,yc){
-                return getTargetDiv(y).insertBefore(getTargetDiv(x).childNodes[xc].cloneNode(true),getTargetDiv(y).childNodes[yc]);
-            }
-            //insert string -> returns object | removes return lines, line feeds, and whitespaces inside the target
-            function compressDiv(x,y){
-                let temp = getTargetDiv(x).childNodes[y].outerHTML;
-                temp = temp.replace(/(?:[\r\n]\s+)/g,'');
-            }
-            //insert mspa banner above #slide
-            insertDiv('#main #container',0,setDivAtt({'div':'a','href':'http://www.mspaintadventures.com'}));
-            insertDiv('#container a',0,setDivAtt({'div':'img','height':'initial','width':'initial','src':offSite+'Mirror/MSPA-6-15-09/images/mspa-logo.gif'}));
-
-            //move comment box to #slide
-            insertDiv('#container #slide',5,getTargetDiv('#container #info').childNodes[3]);
-
-            //replace comment spoiler button with image button
-            stripDivAtt('#commentbox div div',0);
-            setDivAtt({'type':'image','src':offSite+'Mirror/MSPA-6-15-09/images/comment.gif','value':'','data-close':'','data-open':''},getTargetDiv('#commentbox div div').childNodes[0]);
-
-            //move footer umcontainer above #info
-            insertDiv('#main #container',4,getTargetDiv('#main footer').childNodes[1]);
-
-            //move latestpages above #infobox 
-            insertDiv('#container #info',0,setDivAtt({'div':'span','id':'latestpages'}));
-            cloneDiv('#infobox #latestpages .spoiler',3,'#info #latestpages',0);
-            removeDiv('#info #infobox tr',2);
-
-            //trim string length in #latestpages
-            for (let i=0;i<document.querySelectorAll('#latestpages div > span').length;i++) {
-                if (getTargetDiv('#latestpages a > span',i).innerHTML.length > 25) {
-                    getTargetDiv('#latestpages a > span',i).innerHTML = getTargetDiv('#latestpages a > span',i).innerHTML.slice(0,25)+'...';
-                }
-            }
-
-            //delete adventure info spoiler boxes, move adventure info #adventureinfo
-            insertDiv('#info #infobox',0,setDivAtt({'div':'div','id':'adventureinfo'}));
-            insertDiv('#infobox #adventureinfo',0,getTargetDiv('#infobox .spoiler div:last-of-type').childNodes[0]);
-            removeDiv('#info #infobox',1);
-
-            //insertDiv('#info #infobox',1,setDivAtt({'div':'div','id':'news'}));
-            insertDiv('#info #infobox',1,setDivAtt({'div':'img','height':'initial','width':'initial','src':offSite+'Mirror/MSPA-6-15-09/images/newsimg.gif'}));
-
-            //fake copyright image. its here to mimic the real copyright image used in ye olde mspaintadventures times
-            insertDiv('#main footer',0,setDivAtt({'div':'img','src':offSite+'Mirror/MSPA-6-15-09/images/notcopyright.gif'}));
-            /*
-            //news setup
-            MSPFA.import(offSite+'News/newsPosts.js',function(){
-                Lylac.setupNews('#info #infobox',2);
-                Lylac.loadNews(offSite+'News/Posts/','-intervene',7);
-            });
-            */
-        </script>
     </body>
 </html>
