@@ -1,7 +1,7 @@
 //News Post Script made by Lylac_SYS
 //Assistance provided by: sickhippie, Miroware
 //This can load News Posts from an external source if set up correctly.
-window.postMessage(console.log('Hello'),'https://lyl4c.github.io');
+window.postMessage(console.log('Hello'),'https://mspfa.com');
 
 var xhttp = new XMLHttpRequest();
 var Lylac = {
