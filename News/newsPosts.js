@@ -1,6 +1,8 @@
 //News Post Script made by Lylac_SYS
 //Assistance provided by: sickhippie, Miroware
 //This can load News Posts from an external source if set up correctly.
+window.postMessage(console.log('Hello'),'https://lyl4c.github.io');
+
 var xhttp = new XMLHttpRequest();
 var Lylac = {
   //Initial setup
@@ -12,11 +14,14 @@ var Lylac = {
     document.querySelector(selector).insertBefore(temp, document.querySelector(selector).childNodes[selectorChild]);
   },
 
-  //News Post Crawler; Returns # of posts found in url param
-  //STRING url = web address | external source of your News Posts.
-  //STRING fileName = name of the file | example: -intervene | <- use this instead of the full name: 71-intervene.html.
-  //                                     The file MUST be an HTML file.
-  //NUMBER postCount = starting number of the crawler code | can be used to skip post entries.
+  /*
+  News Post Crawler; Returns # of posts found in url param
+  STRING url = web address | external source of your News Posts.
+  STRING fileName = name of the file | example: -intervene
+  use the above example instead of the full name: 71-intervene.html.
+  The file MUST be an HTML file.
+  NUMBER postCount = starting number of the crawler code | can be used to skip to newer post entries.
+  */
   loadNews: function (url, fileName, postCount = 0) {
     xhttp.open('GET', url + (postCount + 1) + fileName + '.html', true);
     xhttp.onreadystatechange = function () {
