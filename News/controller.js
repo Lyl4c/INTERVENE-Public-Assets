@@ -6,7 +6,7 @@ window.addEventListener("message", receiveMessage, false);
 
 function receiveMessage(event)
 {
-  if (event.origin !== "https://mspfa.com") {
+  if (event.origin !== "https://lyl4c.github.io") {
     return;
   } else {
     console.log('Hello');
