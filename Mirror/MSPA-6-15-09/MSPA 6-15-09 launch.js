@@ -60,7 +60,7 @@ function removeDiv(x,y){
 function cloneDiv(x,xc,y,yc){
   return getTargetDiv(y).insertBefore(getTargetDiv(x).childNodes[xc],getTargetDiv(y).childNodes[yc]);
 }
-//Takes a string and removes all whitespace,return lines, and line feeds from inbetween element tags.
+//Takes a string and removes all whitespace,return lines, and line feeds from in between element tags.
 //@x = STRING | Target Element
 //@y = INT    | Child Target
 function compressDiv(x,y){
