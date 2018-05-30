@@ -196,8 +196,9 @@ nav > a:nth-child(-n+3) {
 #adventureNews .newsPost {
   display: inherit;
   margin: 4px auto;
-  width: 533px;
-  background-color: #a9a9a9;
+  padding: 4px;
+  width: 525px;
+  background-color: #dddddd;
 }
 
 footer > img {
