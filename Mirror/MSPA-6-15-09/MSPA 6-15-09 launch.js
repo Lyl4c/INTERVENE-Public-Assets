@@ -101,6 +101,7 @@ Lylac.x = offSite+'News/Posts/';
 Lylac.y = '-intervene';
 Lylac.z = 5;
 
+MSPFA.slide = [];
 MSPFA.slide.push(function(p) {
   switch(p) {
     case (mspa_06_15_09[p]==p?p:-1):
@@ -108,7 +109,8 @@ MSPFA.slide.push(function(p) {
       insertDiv(
         '#main #container',0,
         setDivAtt({
-          'div':'a','href':'http://www.mspaintadventures.com'
+          'div':'a',
+          'href':'http://www.mspaintadventures.com'
         })
       );
       insertDiv(
