@@ -169,7 +169,8 @@ MSPFA.slide.push(function(p) {
       insertDiv(
         '#info #infobox',0,
         setDivAtt({
-          'div':'div','id':'adventureinfo'
+          'div':'div',
+          'id':'adventureinfo'
         })
       );
       insertDiv(
