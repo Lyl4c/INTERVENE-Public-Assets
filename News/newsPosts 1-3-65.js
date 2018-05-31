@@ -3,7 +3,7 @@
  #  This can load News Posts from an external source.     #
  #  See https://mspfa.com/?s=24896&p=2 for the tutorial.  */
 
-var NewsPosts = {
+let NewsPosts = {
   //Initial setup
   //STRING selector = target div | The parent div of where you want to put your posts.
   //NUMBER selectorChild = child div of target div | Where you actually want to place your posts.
